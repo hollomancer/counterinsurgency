@@ -1,0 +1,1 @@
+-- avg_occur: the average number of turns it should take for this event to occur, once trigger criteria are met.
