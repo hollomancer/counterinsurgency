@@ -1,4 +1,4 @@
-require "utilities"
+require "utils"
 
 CharStatus = {}
 
@@ -24,7 +24,7 @@ CharStatus.mt.__index = CharStatus.base
 
 function ReadCharStatusData()
   --read scripted CharStatus entries
-  dofile "char_status_list.lua"
+  dofile "data/char_status_list.lua"
   for k,v in pairs(char_status_list)
     do
      CharStatus[k] = CharStatus.new{}
