@@ -1,3 +1,5 @@
+IntroSeq = {}
+
 IntroSeq[1] = "Beginning nation generation."
 IntroSeq[2] = "Establishing geography."
 IntroSeq[3] = "Populating Khotiana."
@@ -14,15 +16,17 @@ IntroSeq[13] = "Liberating major population centers. [4]"
 IntroSeq[14] = "Establishing provisional government. [5]"
 IntroSeq[15] = "Consolidating power... [5]"
 
-Quotes[1] = nil
+Quotes = {}
+
+Quotes[1] = "PLACEHOLDER"
 Quotes[2] = '"Be polite, be professional, but have a plan to kill everybody you meet." - Gen James Mattis, USMC'
 Quotes[3] = '"Success in a counterinsurgency environment is based on winning popular support, not on blowing up peoples’ houses." - Anonymous USMC officer'
 Quotes[4] = '"If all you have is a hammer, everything looks like a nail." - Abraham Maslow'
 Quotes[5] = '“At the end of the day it all boils down to whether you are fighting the insurgents or the insurgency."  - Anonymous USMC officer'
 Quotes[6] = '“There is only one ‘retirement plan’ for terrorists." - Gen James Mattis, USMC'
 Quotes[7] = '“Both the insurgency and the military force are competing for the same thing: the support of the people." - Gen James Mattis, USMC'
-Quotes[8] = '"For all the [...] intellectuals running around today saying that the nature of war has fundamentally changed, the tactics are wholly new, etc., I must respectfully say, '\'Not really.\'" - Gen James Mattis, USMC'
-Quotes[9] = '"We will be compassionate to all the innocent and deadly only to those who insist on violence, taking no ‘sides’ other than to destroy the enemy." - Gen James Mattis, USMC'
+Quotes[8] = '"For all the [...] intellectuals running around today saying that the nature of war has fundamentally changed, the tactics are wholly new, etc., I must respectfully say, \'Not really.\'" - Gen James Mattis, USMC'
+Quotes[9] = '"We will be compassionate to all the innocent and deadly only to those who insist on violence, taking no \'sides\' other than to destroy the enemy." - Gen James Mattis, USMC'
 Quotes[10] = '"Unnumbered generations of tribal raids have taught them more about some parts of the business than we will ever know." - T.E. Lawrence'
 Quotes[11] = '"Iraqis aren’t your enemy, don’t let the insurgents make you think that. The people are the prize." - Col Clarke Lethin, USMC'
 Quotes[12] = '"I knew Fallujah would be tough... [...] We were going to use the softer forms, focus on lights and water — and go in with small teams to kill the bad guys at night." - Gen James Mattis, USMC'

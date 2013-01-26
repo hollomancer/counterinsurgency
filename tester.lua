@@ -1,14 +1,17 @@
-module(...,package.seeall)
+require "CharMod"
 
-function ReactionModifiers(a)
-  dofile("ReactionModifiers.lua")
-  return 
-function ReactionModifier:GetName(target)
-  return target.name
+function PrintRandomString(a)
+  local b = math.random(1,#a)
+  print(a[b])
 end
 
-function tester.test()
-	--love.graphics.draw(SplashScreenImage,10,10)
-	--love.graphics.print(ReactionModifier:GetName(ReactionModifier),300,200)
-  --if love.keyboard.isDown("up") then Data.NewState() end
-end
+require "data/strings"
+PrintRandomString(Quotes)
+
+--test stuff
+ReadCharModData("data/char_mod_list.lua")
+ReadCharModData("data/reaction_mod_list.lua")
+
+print (CharMod.w_ethos.desc_short)
+print (CharMod.disgruntled.desc_short)
+print (CharMod.disgruntled.expire)

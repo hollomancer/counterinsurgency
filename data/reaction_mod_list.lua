@@ -33,19 +33,3 @@ External Event Penalty()
 Outranks You
 Outranked: Knows
 ]]
-
-local function Constructor(self,gameObj,posX,posY,angle,type)
-  self.type = type
-  self.startPosX = posX
-  self.startPosY = posY
-  
-  self.health = 3
-  
-  self.physComp = gameObj:CreatePhysicsComponent()
-  self.gfxComp = RCompManager:createBoxMesh(gameobj,boxscale,boxscale,gl_lines)
-  
-  self.registerupdateobject(self.Update)
-end
-
-local EnemyBoxClass = RegisterObjectType(Constructor,"EnemyBox")
-

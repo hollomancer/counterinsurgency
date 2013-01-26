@@ -6,6 +6,14 @@
 
 Shell = {}
 
+function Shell:PrintRandomString(a)
+  local b = math.random(1,#a)
+  print(a[b])
+end
+
+-- require "data/strings"
+-- Shell:PrintRandomString(Quotes)
+
 function Shell:draw()
 -- local dialog_opened = true -- for testing
 
