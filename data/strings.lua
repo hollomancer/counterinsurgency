@@ -18,7 +18,7 @@ IntroSeq[15] = "Consolidating power... [5]"
 
 Quotes = {}
 
-Quotes[1] = "PLACEHOLDER"
+Quotes[1] = "PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER "
 Quotes[2] = '"Be polite, be professional, but have a plan to kill everybody you meet." - Gen James Mattis, USMC'
 Quotes[3] = '"Success in a counterinsurgency environment is based on winning popular support, not on blowing up peoples’ houses." - Anonymous USMC officer'
 Quotes[4] = '"If all you have is a hammer, everything looks like a nail." - Abraham Maslow'

@@ -1,38 +1,37 @@
-<<<<<<< HEAD
---require "tester"
-=======
-require "tester"
+require "State"
 
-require "Data"
->>>>>>> origin/master
-require "Shell"
- 
+keyp = {}
+
 function love.load() -- this is the first thing that happens when you load the game!
-	SplashScreenImage = love.graphics.newImage("/img/splashscreen.png")
+  math.randomseed(os.time())
 	if arg[#arg] == "-debug" then require("mobdebug").start() end -- activates the mobile debugger in ZeroBrane
---	local font = love.graphics.newfont("pix.ttf", 36)
---	love.graphics.setFont(font)
+  state = test
 end
 
 function love.update(dt)
-<<<<<<< HEAD
-  Shell:update(dt)
-=======
-	Shell.ControllerState() --keyboard, mouse
-	Shell.RestrictState() --determine disabled input actions
-	--integrate player behavior
-	Director.WorldUpdate()
-		--determine areas requiring update
-		--grab passive elements and sort according to relevance
-		--apply update to passive elements
-		--grab procedural elements and sort into relevance
-		--calculate restrictions and decisions for those elements
-		--apply update to AI elements
->>>>>>> origin/master
+  state:update(dt)
 end
 
 function love.draw()-- all functions that call on love.graphics must live here
-  Shell:draw()
+  state:draw()
 end
 
-Say()
+function love.keypressed(k)
+  print("pressed", k)
+  keyp[k] = 0
+end
+
+function love.keyreleased(k)
+  keyp[k] = nil
+end 
+
+--[[
+function love.focus(f)
+  if not f then
+    print("Lost focus on window")
+  else
+    print("Gained focus on window")
+  end
+end
+]]--
+

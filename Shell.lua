@@ -5,57 +5,67 @@
 ]]
 
 Shell = {}
-
-function Shell:PrintRandomString(a)
-  local b = math.random(1,#a)
-  print(a[b])
-end
-
--- require "data/strings"
--- Shell:PrintRandomString(Quotes)
+local bufferSay = {}
 
 function Shell:draw()
--- local dialog_opened = true -- for testing
-
 -- draws dialogue boxes
   if dialog_opened == true then 
     local msg = string.sub(dialog_message, 1, math.floor(dialog_length))
-    love.graphics.setLineWidth(2)
-    love.graphics.printf(msg,102,402,500)
+    love.graphics.setLineWidth(3)
+    love.graphics.printf(msg,104,403,500)
     love.graphics.rectangle("line",100,400,500,100)
   end 
 end
 
 function Shell:update(dt)
-  Shell:updateDialogue(dt)
+  if dialog_opened == true then Shell:updateDialogue(dt) end
 end
 
 function Shell:updateDialogue(dt)
     dialog_length = dialog_length + dialog_speed * dt 
   if dialog_length > #dialog_message then
-    dialog_finished = true
-    --Use this part to do things that need to happen when the text is finished. Like only allow the user
-    --to move to the next dialog when the text is finished by checking for key presses and checking
-    --whether the dialog is finished or not and if it is finished then exit it, and if not, speed the text
-    --up to get to the end faster if you want.
+    if keyp[" "] == 0 then
+      dialog_opened = false
+      table.remove(bufferSay,1)
+      table.remove(bufferSay,1)
+      table.remove(bufferSay,1)
+      if bufferSay[1] ~= nil then Shell:loadDialogue()
+      end
+    end
   end
 end
+  
+-- Say() brings up a dialogue box with character image, if applicable.
 
+function Shell:loadDialogue()
+  dialog_message = bufferSay[1]
+  dialog_image = bufferSay[2]
+  dialog_speed = bufferSay[3]
+  dialog_length = 0
+  dialog_opened = true
+end
 
 function Say(text,image,speed)
-  dialog_message = text or "Say function \nlacks text argument!"
-  dialog_image = image 
-  dialog_speed = speed or "10"
-  dialog_length = 0
-  dialog_finished = false
-  dialog_opened = true
+  if text == nil then table.insert(bufferSay,"Say function lacks text argument!")
+    else table.insert(bufferSay,text) end
+  if image == nil then table.insert(bufferSay,"img/missing.png")
+    else table.insert(bufferSay,image) end
+  if speed == nil then table.insert(bufferSay,10)
+    else table.insert(bufferSay,speed) end
+  Shell:loadDialogue()
 end
 
 function Choice(image,text1,text2,text3, ...)
      TalkImg = image
      Shell.Box()
-     -- *decided*
+     -- *decided*tab
      outcome = x
+end
+
+function Shell:randomQuote()
+  require "data/strings"
+  local b = math.random(1,#Quotes)
+  return(Quotes[b])
 end
 
 --  example
