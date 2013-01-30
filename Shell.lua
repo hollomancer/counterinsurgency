@@ -77,6 +77,6 @@ end
 -- if outcome = 1 ... etc
 
 
-Say("TEST PHRASE 1")
-Say("TEST PHRASE 2")
-Say("TEST PHRASE 3")
+Say(Shell:randomQuote())
+Say(Shell:randomQuote())
+Say(Shell:randomQuote())
