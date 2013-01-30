@@ -22,7 +22,7 @@ function Shell:update(dt)
 end
 
 function Shell:updateDialogue(dt)
-    dialog_length = dialog_length + dialog_speed * dt 
+    dialog_length = dialog_length + dialog_speed * dt
   if dialog_length > #dialog_message then
     if keyp[" "] == 0 then
       dialog_opened = false
@@ -75,3 +75,8 @@ end
 -- [[James]] local text3 = "Choice 3" ]]
 -- Choice(jamesimg,text1,text2,text3)
 -- if outcome = 1 ... etc
+
+
+Say("TEST PHRASE 1")
+Say("TEST PHRASE 2")
+Say("TEST PHRASE 3")

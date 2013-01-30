@@ -1,9 +1,9 @@
 require "Shell"
 
-State = {}
+test = {}
 
-function State:update(dt)
-  Shell:update(dt)
+function test.update(dt)
+  Shell.update(dt)
 	--Shell.ControllerState() --keyboard, mouse
 	--Shell.RestrictState() --determine disabled input actions
 	--integrate player behavior
@@ -16,6 +16,10 @@ function State:update(dt)
 		--apply update to AI elements
 end
 
-function State:draw()
+function test:draw()
   Shell:draw()
 end
+
+Say("TEST PHRASE 1")
+Say("TEST PHRASE 2")
+Say("TEST PHRASE 3")

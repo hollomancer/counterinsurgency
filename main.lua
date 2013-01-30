@@ -1,19 +1,28 @@
-require "State"
-
 keyp = {}
-
+Game = {State = true}
+      
 function love.load() -- this is the first thing that happens when you load the game!
   math.randomseed(os.time())
 	if arg[#arg] == "-debug" then require("mobdebug").start() end -- activates the mobile debugger in ZeroBrane
-  state = test
 end
 
 function love.update(dt)
-  state:update(dt)
+  for k,v in pairs(Game) do
+      if v == true then
+        require(k)
+        local a = _G[k]
+        a:update(dt)
+      end
+    end
 end
 
 function love.draw()-- all functions that call on love.graphics must live here
-  state:draw()
+  for k,v in pairs(Game) do
+    if v == true then
+      require(k)
+      local a = k..":draw()"
+      loadstring(a)() end
+  end
 end
 
 function love.keypressed(k)
