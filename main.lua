@@ -10,9 +10,11 @@ require 'Controls'
 require 'State'      
 Game = State
 
+require 'tester'
 function love.update(dt)
   --Poll:Data()
-  Game:update(dt)
+  --Game:update(dt)
+  test()
 end
 
 function love.draw()-- all functions that call on love.graphics must live here

@@ -9,9 +9,11 @@ require "data/strings"
 PrintRandomString(Quotes)
 
 --test stuff
-ReadCharModData("data/char_mod_list.lua")
-ReadCharModData("data/reaction_mod_list.lua")
+function test()
+  ReadCharModData("data/char_mod_list.lua")
+  ReadCharModData("data/reaction_mod_list.lua")
 
-print (CharMod.w_ethos.desc_short)
-print (CharMod.disgruntled.desc_short)
-print (CharMod.disgruntled.expire)
+  print (CharMod.w_ethos.desc_short)
+  print (CharMod.disgruntled.desc_short)
+  print (CharMod.disgruntled.expire)
+end

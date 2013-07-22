@@ -78,5 +78,3 @@ end
 
 
 Say(Shell:randomQuote())
-Say(Shell:randomQuote())
-Say(Shell:randomQuote())

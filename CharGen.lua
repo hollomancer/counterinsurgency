@@ -1,9 +1,9 @@
 math.randomseed(os.time())
 
-local function initPersonality(num_of_personalities)
+local function initPersonality(numPersonalities)
   local p = {}
-  for i = 1,num_of_personalities do
-    a = math.random(0,7)
+  for i = 1,numPersonalities do
+    local a = math.random(0,7)
     if a == 0 and p["p_mildmannered"] ~= true then
        p["p_aggressive"] = true
      elseif a == 1 and p["p_aggressive"] ~= true then
@@ -87,15 +87,39 @@ local function initVITALS(points,char)
       points = points - 1
     end
       
-    end
+  end
+    
   local VITALS = {
-    VIG = VIG,
-    INT = INT,
-    TEN = TEN,
-    ACU = ACU,
-    LOY = LOY,
-    SPD = SPD}
+    base_VIG = VIG,
+    base_INT = INT,
+    base_TEN = TEN,
+    base_ACU = ACU,
+    base_LOY = LOY,
+    base_SPD = SPD}
   return VITALS
+end
+
+local function initBackground()
+  local b = {}
+  
+  local a = math.random(0,6)
+  if a == 0 then 
+    b["b_maneuver"] = true
+  elseif a == 1 then 
+    b["b_fires"] = true
+  elseif a == 2 then 
+    b["b_armor"] = true
+  elseif a == 3 then 
+    b["b_engineer"] = true  
+  elseif a == 4 then 
+    b["b_academic"] = true  
+  elseif a == 5 then 
+    b["b_support"] = true  
+  elseif a == 6 then
+    b["b_militia"] = true
+  end
+
+  return b
 end
 
 local function genChar(pointlow,pointhigh)
@@ -103,8 +127,14 @@ local function genChar(pointlow,pointhigh)
   local char = {}
   for k,v in pairs(initPersonality(2)) do char[k] = v end
   for k,v in pairs(initVITALS(total_points,char)) do char[k] = v end
-  --initSkills()
+  for k,v in pairs(initBackground()) do char[k] = v end
   return char
 end
 
-for k,v in pairs(genChar(12,20)) do print(k,v) end
+char_tom = genChar(12,20)
+char_dick = genChar(12,20)
+char_harry = genChar(12,20)
+
+char_tom["s_marksmanship"] = true
+
+for k,v in pairs(char_tom) do print(k,v) end
