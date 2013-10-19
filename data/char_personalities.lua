@@ -193,7 +193,7 @@ list = {
   p_slowwitted = {
     desc_short = "Slow-witted",
     desc_long = "Not the sharpest knife in the drawer.",
-    INT = -1,
+    INT = -2,
     SPD = -1,
     overwrites = {p_quickwitted}
   },
@@ -201,7 +201,7 @@ list = {
   p_quickwitted = {
     desc_short = "Quick-witted",
     desc_long = "PLACEHOLDER",
-    INT = 1,
+    INT = 2,
     SPD = 1,
     overwrites = {p_slowwitted}
   },
@@ -209,7 +209,7 @@ list = {
   p_strong = {
     desc_short = "Strong",
     desc_long = "PLACEHOLDER",
-    VIG = 1,
+    VIG = 2,
     TEN = 1,
     overwrites = {p_weak}
   },
@@ -217,11 +217,27 @@ list = {
   p_weak = {
     desc_short = "Weak",
     desc_long = "A hard gainer.",
-    VIG = -1,
+    VIG = -2,
     TEN = -1,
     overwrites = {p_strong}
   },
 
+  p_athletic = {
+    desc_short = "Athletic",
+    desc_long = "PLACEHOLDER",
+    TEN = 2,
+    SPD = 1,
+    overwrites = {p_outofshape}
+  },
+
+  p_outofshape = {
+    desc_short = "Out of Shape",
+    desc_long = "This person needs to hit the gym.",
+    TEN = -2,
+    SPD = -1,
+    overwrites = {p_athletic}
+  },
+  
   p_slim = {
     desc_short = "Slim",
     desc_long = "PLACEHOLDER",
@@ -252,23 +268,6 @@ list = {
     overwrites = {p_pooreyesight}
   },
 }
-
---[[cruft i'm not ready to get rid of yet    
-    
-    if a == 0 and p["p_mildmannered"] ~= true then
-       p["p_aggressive"] = true
-     elseif a == 1 and p["p_aggressive"] ~= true then
-       p["p_mildmannered"] = true
-     elseif a == 2 and p["p_intellectual"] ~= true then
-       p["p_simpleminded"] = true
-     elseif a == 3 and p["p_simpleminded"] ~= true then
-       p["p_intellectual"] = true
-     elseif a == 4 and p["p_fat"] ~= true then
-       p["p_athletic"] = true
-     elseif a == 5 and p["p_athletic"] ~= true then
-       p["p_fat"] = true
-       
---]]
 
 -- apply char_personalities (todo: make this inherit instead.)
 for k,v in pairs(list) do
