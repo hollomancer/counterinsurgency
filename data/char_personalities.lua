@@ -1,4 +1,4 @@
-require "utils"
+require "core/Utils"
        
 --# char_personality_list.lua
 --# Inherent personality traits for characters.

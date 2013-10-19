@@ -1,4 +1,3 @@
- 
 function love.load() -- this is the first thing that happens when you load the game!
   math.randomseed(os.time())
 	if arg[#arg] == "-debug" then require("mobdebug").start() end -- activates the mobile debugger in ZeroBrane

@@ -1,4 +1,24 @@
-require "utils"
+require "core/Utils"
+
+local function test() -- gimme some output!
+  print("### START TEST CHARMOD ###")
+    function PrintRandomString(a)
+      local b = math.random(1,#a)
+      print(a[b])
+    end
+
+    require "data/strings"
+    PrintRandomString(Quotes)
+
+    ReadCharModData("data/char_mod_list.lua")
+    ReadCharModData("data/reaction_mod_list.lua")
+
+    print (CharMod.w_ethos.desc_short)
+    print (CharMod.disgruntled.desc_short)
+    print (CharMod.disgruntled.expire)
+      
+  print("### END TEST CHARMOD ###")
+end
 
 CharMod = {}
 
@@ -31,3 +51,5 @@ function ReadCharModData(a)
      table.merge(CharMod[k],v)
   end
 end
+
+test()
