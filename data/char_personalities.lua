@@ -1,25 +1,4 @@
 require "utils"
-
---[[cruft i'm not ready to get rid of yet    
-    
-    if a == 0 and p["p_mildmannered"] ~= true then
-       p["p_aggressive"] = true
-     elseif a == 1 and p["p_aggressive"] ~= true then
-       p["p_mildmannered"] = true
-     elseif a == 2 and p["p_intellectual"] ~= true then
-       p["p_simpleminded"] = true
-     elseif a == 3 and p["p_simpleminded"] ~= true then
-       p["p_intellectual"] = true
-     elseif a == 4 and p["p_fat"] ~= true then
-       p["p_athletic"] = true
-     elseif a == 5 and p["p_athletic"] ~= true then
-       p["p_fat"] = true
-     elseif a == 6 and p["p_rebellious"] ~= true then
-       p["p_teamplayer"] = true
-     elseif a == 7 and p["p_teamplayer"] ~= true then
-       p["p_rebellious"] = true
-       
---]]
        
 --# char_personality_list.lua
 --# Inherent personality traits for characters.
@@ -37,7 +16,7 @@ require "utils"
 --# }
 
 local char_personalities = {
-  active = false, -- nothing should ever start active
+  -- active = false, -- nothing should ever start active... but maybe this flag is unnecessary
   expire_time = 0, -- personality traits don't expire
   expire_announce = true, -- but should always announce when they disappear
   priority = 3, -- and are never a high priority due to their permanence
@@ -193,7 +172,103 @@ list = {
     -- They have no relation to each other, and tend to minorly dislike their opposite, Tolerant characters.
   },
 
+  p_mildmannered = {
+    desc_short = "Mild-mannered",
+    desc_long = "PLACEHOLDER",
+    VIG = -1,
+    TEN = -1,
+    LIB = -1,
+    overwrites = {PLACEHOLDER}
+  },
+
+  p_aggressive = {
+    desc_short = "Aggressive",
+    desc_long = "PLACEHOLDER",
+    VIG = 1,
+    TEN = 1,
+    LIB = 1,
+    overwrites = {PLACEHOLDER}
+  },
+
+  p_slowwitted = {
+    desc_short = "Slow-witted",
+    desc_long = "Not the sharpest knife in the drawer.",
+    INT = -1,
+    SPD = -1,
+    overwrites = {p_quickwitted}
+  },
+
+  p_quickwitted = {
+    desc_short = "Quick-witted",
+    desc_long = "PLACEHOLDER",
+    INT = 1,
+    SPD = 1,
+    overwrites = {p_slowwitted}
+  },
+
+  p_strong = {
+    desc_short = "Strong",
+    desc_long = "PLACEHOLDER",
+    VIG = 1,
+    TEN = 1,
+    overwrites = {p_weak}
+  },
+
+  p_weak = {
+    desc_short = "Weak",
+    desc_long = "A hard gainer.",
+    VIG = -1,
+    TEN = -1,
+    overwrites = {p_strong}
+  },
+
+  p_slim = {
+    desc_short = "Slim",
+    desc_long = "PLACEHOLDER",
+    VIG = -1,
+    SPD = 2,
+    overwrites = {p_large}
+  },
+
+  p_large = {
+    desc_short = "Large",
+    desc_long = "Large and in charge.",
+    TEN = 1,
+    SPD = -2,
+    overwrites = {p_slim}
+  },
+
+  p_pooreyesight = {
+    desc_short = "Poor Eyesight",
+    desc_long = "PLACEHOLDER",
+    ACU = -2,
+    overwrites = {p_eagleeyed}
+  },
+
+  p_sharpeyed = {
+    desc_short = "Sharpeyed",
+    desc_long = "PLACEHOLDER",
+    ACU = 2,
+    overwrites = {p_pooreyesight}
+  },
 }
+
+--[[cruft i'm not ready to get rid of yet    
+    
+    if a == 0 and p["p_mildmannered"] ~= true then
+       p["p_aggressive"] = true
+     elseif a == 1 and p["p_aggressive"] ~= true then
+       p["p_mildmannered"] = true
+     elseif a == 2 and p["p_intellectual"] ~= true then
+       p["p_simpleminded"] = true
+     elseif a == 3 and p["p_simpleminded"] ~= true then
+       p["p_intellectual"] = true
+     elseif a == 4 and p["p_fat"] ~= true then
+       p["p_athletic"] = true
+     elseif a == 5 and p["p_athletic"] ~= true then
+       p["p_fat"] = true
+       
+--]]
 
 -- apply char_personalities (todo: make this inherit instead.)
 for k,v in pairs(list) do
