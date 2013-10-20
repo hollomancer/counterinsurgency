@@ -24,6 +24,7 @@ w_ethos = {
   INT = -1,
   priority = 3,
   stackable = true
+  -- My bayonet, on the wings of power, keeps the peace worldwide.
   },
 
 h_ethos = {
@@ -33,6 +34,7 @@ h_ethos = {
   VIG = -1,
   priority = 3,
   stackable = true
+  -- Some of the best weapons for counterinsurgents do not shoot.
   },
 
 --# injury status
