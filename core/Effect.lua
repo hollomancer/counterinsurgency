@@ -1,12 +1,11 @@
 local Prototype = require( "core/extPrototype" )
 
-local Object = Prototype{
+Effect = Prototype{
   default = Prototype.no_copy,
   table = Prototype.shallow_copy,
   use_Prototype_delegation = true,
 }
 
-local Effect = Object:clone()
 Effect.name = "NO_EFFECT_NAME"
 
 function Effect:say()
@@ -20,6 +19,5 @@ end
 Effect:say()
 local alice = Effect:clone()
 alice.name = "Alice"
-alice:say()
 
 print(Effect:getName())

@@ -1,28 +1,40 @@
 require "core/Utils"
-require "core/Effect"
        
---# char_personalities.lua
+--# char_personality_list.lua
 --# Inherent personality traits for characters.
 
+--# SAMPLE
+--# w_ethos = {
+--#   desc_short = "Warrior Ethos" -- short description
+--#   desc_long = "Your team is aggressive." -- for tooltips
+--#   img = imagefile -- icon
+--#   VIG = 1
+--#   priority = 3 -- priority to show ingame. ranges from 1 to 4. 4 is invisible.
+--#   stackable = true -- can there be more than one level of this effect?
+--#   expire_time = 0 -- how many turns before this status goes away? 0 is never.
+--#   expire_announce = false -- does the game announce when this status effect goes away?
+--# }
+
 local function test() -- gimme some output!
-  print("### START TEST char_personalities ###")
-  for k,v in pairs(char_personalities) do
+  print("### START TEST CHARACTER PERSONALITY OUTPUT ###")
+  for k,v in pairs(list) do
     local b = k
       for k,v in pairs(v) do
         print(b,k,v)
       end
   end
-  print("### END TEST char_personalities ###")
+  print("### END TEST CHARACTER PERSONALITY OUTPUT ###")
 end
 
-char_personalities = {
+list = {
 
   p_base = {
-    -- p_base.active = false, -- nothing should ever start active... but maybe this flag is unnecessary
+    name = "p_base",
+    -- active = false, -- nothing should ever start active... but maybe this flag is unnecessary
     expire_time = 0, -- personality traits don't expire
     expire_announce = true, -- but should always announce when they disappear
     priority = 3, -- and are never a high priority due to their permanence
-    stackable = false, -- and never stack
+    stackable = false -- and never stack
   },
 
   p_humble = {
@@ -100,8 +112,8 @@ char_personalities = {
     -- They have no relation to each other, and tend to minorly dislike their opposite, Cautious characters.
   },
 
-  p_ideachar_personalitiesic = {
-    desc_short = "Ideachar_personalitiesic",
+  p_idealistic = {
+    desc_short = "Idealistic",
     desc_long = "PLACEHOLDER",
     LIB = 1,
     TEN = 1,
@@ -116,7 +128,7 @@ char_personalities = {
     LIB = 1,
     INT = 1,
     reputation_multiply = -0.1,
-    overwrites = {p_ideachar_personalitiesic}
+    overwrites = {p_idealistic}
     -- They have no relation to each other, and tend to minorly dislike their opposite, Cautious characters.
   },
 
@@ -258,11 +270,9 @@ char_personalities = {
   },
 }
 
--- apply p_base (todo: make this inherit instead)
---[[
-for k,v in pairs(char_personalities) do
-  table.merge(char_personalities[k],p_base)
+-- apply char_personalities (todo: make this inherit instead.)
+for k,v in pairs(list) do
+  table.merge(list[k],list[p_base])
 end
---]]
 
 test()
