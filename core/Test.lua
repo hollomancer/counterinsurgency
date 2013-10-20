@@ -6,17 +6,32 @@ Test = {}
 function Test.ParseEffect() -- gimme some output!
   local a = 0
   
+  local required_effects = {
+    "name",
+    "desc_short",
+    "desc_long",
+    "potatoes"
+    }
+  
   print("### TEST: Parse Personality Effects")
-  for k,v in pairs(list) do
-    local b = k
-      for k,v in pairs(v) do
-        -- print(b,k,v)
-        if type(v)~="table" and type(v)~="boolean" and
-          string.find(v,"PLACEHOLDER") ~= nil 
-          then print("!!! Warning: " .. b .. " " .. k .. " contains placeholder text.")
-          a = a + 1
-        end
+  for e_name,e_property in pairs(list) do
+    
+    for e_property,e_value in pairs(e_property) do
+      if type(e_value)~="table"
+        and type(e_value)~="boolean"
+        and string.find(e_value,"PLACEHOLDER") ~= nil
+        and e_name ~= "p_base" then
+        print("!!! Warning: Effect " .. e_name .. " contains placeholder text on property " .. e_property .. ".")
+        a = a + 1
       end
+    end
+  
+    if table.haskey(list[e_name],"desc_short") == false
+      and e_name ~= "p_base"
+      then
+       print("!!! Warning: Effect " .. e_name .. " is missing the desc_short property.")
+       a = a + 1
+    end
   end
   print("!!! " .. a .. " ERRORS FOUND")
   

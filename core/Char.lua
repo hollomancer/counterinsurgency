@@ -1,7 +1,10 @@
 require( "core/Actor" )
 
 Char = Actor:clone()
+Char.name = "PLACEHOLDER"
 
-Char.name = "NO_CHAR_NAME"
+local test_chardata = {
+  name = "test_chardata"
+  effects = {}
+}
 
-print(Char.name)

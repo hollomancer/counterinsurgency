@@ -1,8 +1,9 @@
 local Prototype = require( "core/extPrototype" )
 
 Effect = Prototype{
-  default = Prototype.assignment_copy,
+  default = Prototype.no_copy,
   table = Prototype.shallow_copy,
+  use_prototype_delegation = true,
 }
 
 Effect.name = "NO_EFFECT_NAME"
