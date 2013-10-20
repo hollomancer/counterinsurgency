@@ -77,3 +77,14 @@ function Test.OverwriteEffect()
   print("### END TEST: Overwrite a Contradictory Effect ###")
   ]]
 end
+
+
+function Test.CharGen()
+  local test_char1 = newCharISFK()
+  test_char1.name = "test_char1"
+  test_char1.desc_short = "Test Character 1"
+  test_char1.desc_long = "I am a test character 1."
+
+  for k,v in pairs(test_char1) do print (k,v) end
+  for k,v in pairs(test_char1.effects) do print (k,v) end
+end
