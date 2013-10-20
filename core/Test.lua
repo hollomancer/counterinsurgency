@@ -79,12 +79,28 @@ function Test.OverwriteEffect()
 end
 
 
-function Test.CharGen()
-  local test_char1 = newCharISFK()
+function Test.CharGenISFK()
+  print("### TEST: Generate ISFK Character ###")
+  test_char1 = newChar(test_char1,"isfk")
   test_char1.name = "test_char1"
   test_char1.desc_short = "Test Character 1"
   test_char1.desc_long = "I am a test character 1."
 
   for k,v in pairs(test_char1) do print (k,v) end
   for k,v in pairs(test_char1.effects) do print (k,v) end
+  
+  print("### END: Generate ISFK Character ###")
+end
+
+function Test.CharGenLN()
+  print("### TEST: Generate LN Character ###")
+  test_char2 = newChar(test_char2,"ln")
+  test_char2.name = "test_char2"
+  test_char2.desc_short = "Test Character 2"
+  test_char2.desc_long = "I am a test character 2."
+
+  for k,v in pairs(test_char2) do print (k,v) end
+  for k,v in pairs(test_char2.effects) do print (k,v) end
+  
+  print("### END: Generate LN Character ###")
 end

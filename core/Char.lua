@@ -7,7 +7,7 @@ Char.desc_short = "PLACEHOLDER"
 Char.desc_long = "PLACEHOLDER"
 Char.effects = {}
 
-function newCharISFK(new_char)
+function newChar(new_char,char_type)
   math.randomseed(os.time())
   local new_char = Char:clone()
   
@@ -56,7 +56,7 @@ function newCharISFK(new_char)
     elseif char["p_aggressive"] == true and points > 0 and VIG <= 74 then
       VIG = VIG + 1
       points = points - 1
-    elseif b > 0.1 and VIG <= 50 and points > 0 then
+    elseif b > 0.1 and VIG <= 65 and points > 0 then
       VIG = VIG + 1
       points = points - 1
     end
@@ -66,7 +66,7 @@ function newCharISFK(new_char)
     elseif char["p_quickwitted"] == true and points > 0 and INT <= 74 then
       INT = INT + 1
       points = points - 1
-    elseif b > 0.1 and INT <= 50 and points > 0 then
+    elseif b > 0.1 and INT <= 65 and points > 0 then
       INT = INT + 1
       points = points - 1
     end
@@ -76,13 +76,13 @@ function newCharISFK(new_char)
     elseif char["p_athletic"] == true and points > 0 and TEN <= 74 then
       TEN = TEN + 1
       points = points - 1
-    elseif b > 0.1 and TEN <= 50 and points > 0 then
+    elseif b > 0.1 and TEN <= 65 and points > 0 then
        TEN = TEN + 1
        points = points - 1
     end
       
     local b = math.random(0,1)
-    if b > 0.5 and ACU <= 50 and points > 0 then
+    if b > 0.5 and ACU <= 65 and points > 0 then
       ACU = ACU + 1
       points = points - 1
     end
@@ -92,13 +92,13 @@ function newCharISFK(new_char)
     elseif char["p_cautious"] == true and points > 0 and LIB <= 74 then
       LIB = LIB + 1
       points = points - 1
-    elseif b > 0.1 and LIB <= 50 and points > 0 then
+    elseif b > 0.1 and LIB <= 65 and points > 0 then
        LIB = LIB + 1
       points = points - 1
     end
       
     local b = math.random(0,1)
-    if b > 0.1 and SPD <= 50 and points > 0 and SPD <= 74 then
+    if b > 0.1 and SPD <= 65 and points > 0 and SPD <= 74 then
       SPD = SPD + 1
       points = points - 1
     end
@@ -138,23 +138,29 @@ end
     return b
   end
 
-  function genChar(pointlow,pointhigh)
-    local total_points = math.random(pointlow,pointhigh)
-    local char = {}
-    local effects = {}
-    for k,v in pairs(initPersonality(3)) do effects[k] = v end
-    for k,v in pairs(initVITALS(total_points,char)) do char[k] = v end
+  
+  
+  if char_type == "isfk" then
+    total_points = math.random(200,300)
+    elseif char_type == "ln" then
+      total_points = math.random(150,250)
+    end
+  local char = {}
+  local effects = {}
+  for k,v in pairs(initPersonality(3)) do effects[k] = v end
+  for k,v in pairs(initVITALS(total_points,char)) do effects[k] = v end
+  
+  if char_type == "isfk" then
     for k,v in pairs(initBackground()) do effects[k] = v end
-    char.effects = effects
-    return char
-end
+  end
   
+  char.effects = effects
+  char.faction = char_type
   
-  
-  
-  table.merge(genChar(250,250),new_char)
+  table.merge(char,new_char)
   return new_char
 end
-
 require "core/Test"
-Test.CharGen()
+
+Test.CharGenISFK()
+Test.CharGenLN()
