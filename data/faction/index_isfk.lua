@@ -20,7 +20,7 @@ f_isfk_command = {
   region5 = {
     desc_short = "RHQ West"
   }
-  desc_long = "The ISFK has established a regional headquarters in every province. Regional headquarters ostensibly provide centralized leadership for the disparate nation-building and nation-exploding foreign forces in the area." --improve this
+  desc_long = "One of our two bosses. The ISFK has established a regional headquarters in every province. Regional headquarters ostensibly provide centralized leadership for the disparate nation-building and nation-unbuilding foreign forces in the area." --improve this
 }
 
 f_isfk_garrison = {
@@ -28,21 +28,21 @@ f_isfk_garrison = {
   group = "isfk"
   script = "data/faction/isfk_garrison"
   region1 = {
-    desc_short = "FOB Duffer Garrison"
+    desc_short = "FOB Duffer"
   }
   region2 = {
-    desc_short = "FOB McDonough Garrison"
+    desc_short = "FOB McDonough"
   }
   region3 = {
-    desc_short = "FOB Marckwardt Garrison"
+    desc_short = "FOB Marckwardt"
   }
   region4 = {
-    desc_short = "FOB Burgoyne Garrison"
+    desc_short = "FOB Burgoyne"
   }
   region5 = {
-    desc_short = "Dunlop-Swinton Garrison"
+    desc_short = "Joint Base Dunlop-Swinton"
   }
-  desc_long = "The local forward operating base is currently being run by a brigade-level command. In addition to being the battlespace owners, they also handle logistics and defense for all ISFK forces in the province."
+  desc_long = "One of our two bosses. The local base of operations is currently being run by a brigade-level command. In addition to being the battlespace owners, they also handle logistics and force protection for all ISFK forces in the province."
 }
 
 f_isfk_starborne = {

@@ -3,17 +3,15 @@ function love.load() -- this is the first thing that happens when you load the g
 	if arg[#arg] == "-debug" then require("mobdebug").start() end -- activates the mobile debugger in ZeroBrane
 end
 
-require 'Controls'
-
+require 'core/Controls'
+require 'core/State'      
 --debug
-require 'State'      
 Game = State
 
-require 'tester'
 function love.update(dt)
   --Poll:Data()
   --Game:update(dt)
-  test()
+
 end
 
 function love.draw()-- all functions that call on love.graphics must live here

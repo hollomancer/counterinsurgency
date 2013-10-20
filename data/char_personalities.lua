@@ -5,6 +5,8 @@ require "core/Effect"
 --# Inherent personality traits for characters.
 
 local function test() -- gimme some output!
+  
+  --[[
   print("### START TEST char_personalities ###")
   for k,v in pairs(char_personalities) do
     local b = k
@@ -13,11 +15,21 @@ local function test() -- gimme some output!
       end
   end
   print("### END TEST char_personalities ###")
+  ]]
+  
+  print("### START TEST Build Humble Personality Effect ###")
+  test_effect = Effect:Build(list.p_base,list.p_humble)
+    for k,v in pairs(test_effect) do
+    print(k,v)
+  end
+  print("### END TEST Build Humble Personality Effect) ###")
+  
 end
 
-char_personalities = {
+list = {
 
   p_base = {
+    name = "NO_PERSONALITY_EFFECT_NAME",
     -- p_base.active = false, -- nothing should ever start active... but maybe this flag is unnecessary
     expire_time = 0, -- personality traits don't expire
     expire_announce = true, -- but should always announce when they disappear
@@ -26,6 +38,7 @@ char_personalities = {
   },
 
   p_humble = {
+    name = "p_humble",
     desc_short = "Humble",
     desc_long = "A great man is always willing to be little.",
     VIG = -1,

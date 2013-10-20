@@ -1,3 +1,6 @@
-function table.merge(first_table,second_table)
-  for k,v in pairs(second_table) do first_table[k] = v end
+--# table.merge
+--# merges two tables together
+
+function table.merge(origin,target)
+  for k,v in pairs(origin) do target[k] = v end
 end
