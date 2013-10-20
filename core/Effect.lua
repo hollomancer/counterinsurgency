@@ -21,7 +21,6 @@ function Effect:AddEffect(base_effect,target_effect)
     end
   end
   ]]
-  
   return built_effect
 end
 

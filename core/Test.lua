@@ -100,7 +100,12 @@ function Test.CharGenLN()
   test_char2.desc_long = "I am a test character 2."
 
   for k,v in pairs(test_char2) do print (k,v) end
-  for k,v in pairs(test_char2.effects) do print (k,v) end
+  for k,v in pairs(test_char2.effects) do
+    --if type(v)=="table" then
+    --  for a,b in pairs(v) do print (a,b) end -- this was for checking if the active bool was getting set properly... probably a better way to do this
+    --end
+    print (k,v)
+  end
   
   print("### END: Generate LN Character ###")
 end

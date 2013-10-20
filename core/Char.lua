@@ -1,5 +1,6 @@
 require( "core/Utils" )
 require( "core/Actor" )
+require( "core/Effect" )
 
 Char = Actor:clone()
 Char.name = "PLACEHOLDER"
@@ -26,10 +27,10 @@ function newChar(new_char,char_type)
        elseif a == 3 and p["p_slowwitted"] ~= true then
          p["p_quickwitted"] = true
          
-       elseif a == 4 and p["p_fat"] ~= true then
-         p["p_athletic"] = true
-       elseif a == 5 and p["p_athletic"] ~= true then
-         p["p_fat"] = true
+       elseif a == 4 and p["p_large"] ~= true then
+         p["p_slim"] = true
+       elseif a == 5 and p["p_slim"] ~= true then
+         p["p_large"] = true
          
        elseif a == 6 and p["p_bold"] ~= true then
          p["p_cautious"] = true
@@ -72,8 +73,8 @@ function newChar(new_char,char_type)
     end
       
     local b = math.random(0,1)
-    if char["p_fat"] == true and TEN >= 35 then --do nothing
-    elseif char["p_athletic"] == true and points > 0 and TEN <= 74 then
+    if char["p_large"] == true and TEN >= 35 then --do nothing
+    elseif char["p_slim"] == true and points > 0 and TEN <= 74 then
       TEN = TEN + 1
       points = points - 1
     elseif b > 0.1 and TEN <= 65 and points > 0 then
@@ -144,16 +145,24 @@ end
     total_points = math.random(200,300)
     elseif char_type == "ln" then
       total_points = math.random(150,250)
-    end
+  end
   local char = {}
   local effects = {}
   for k,v in pairs(initPersonality(3)) do effects[k] = v end
   for k,v in pairs(initVITALS(total_points,char)) do effects[k] = v end
   
   if char_type == "isfk" then
-    for k,v in pairs(initBackground()) do effects[k] = v end
+    --for k,v in pairs(initBackground()) do effects[k] = v end
   end
   
+  for k,v in pairs(effects) do
+    if v == true then
+      require( "data/char_personalities" )
+      print(list[k])
+      assert(list[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
+      effects[k] = Effect:AddEffect(list.p_base,list[k]) --this needs to activate the effect too...
+    end
+  end
   char.effects = effects
   char.faction = char_type
   

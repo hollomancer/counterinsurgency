@@ -10,7 +10,6 @@ list = {
 
   p_base = {
     name = "PLACEHOLDER",
-    -- p_base.active = false, -- nothing should ever start active... but maybe this flag is unnecessary
     expire_time = 0, -- personality traits don't expire
     expire_announce = true, -- but should always announce when they disappear
     priority = 3, -- and are never a high priority due to their permanence
