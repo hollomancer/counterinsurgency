@@ -8,7 +8,7 @@ What does this module need to do?
 local Prototype = require( "core/extPrototype" )
 
 Actor = Prototype{
-  default = Prototype.no_copy,
+  default = Prototype.assignment_copy,
   table = Prototype.shallow_copy,
   use_Prototype_delegation = true,
 }

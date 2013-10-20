@@ -3,14 +3,13 @@
 
 Test = {}
 
-function Test.ParseEffect() -- gimme some output!
+function Test.ParseEffectList() -- gimme some output!
   local a = 0
   
-  local required_effects = {
+  local required_properties = {
     "name",
     "desc_short",
     "desc_long",
-    "potatoes"
     }
   
   print("### TEST: Parse Personality Effects")
@@ -25,15 +24,17 @@ function Test.ParseEffect() -- gimme some output!
         a = a + 1
       end
     end
-  
-    if table.haskey(list[e_name],"desc_short") == false
+    
+  for key,value in pairs(required_properties) do
+    if table.haskey(list[e_name],value) == false
       and e_name ~= "p_base"
       then
-       print("!!! Warning: Effect " .. e_name .. " is missing the desc_short property.")
+       print("!!! Warning: Effect " .. e_name .. " is missing the " .. value .. " property.")
        a = a + 1
     end
   end
-  print("!!! " .. a .. " ERRORS FOUND")
+  end
+  print("!!! " .. a .. " errors found.")
   
   if a ~= 0 then
     print("### FAIL: Parse Personality Effects")

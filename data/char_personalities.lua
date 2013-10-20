@@ -30,7 +30,7 @@ list = {
   },
 
   p_proud = {
-    name = "p_humble",
+    name = "p_proud",
     desc_short = "Proud",
     desc_long = "Don't tell me what I can't do.",
     VIG = 1,
@@ -276,6 +276,6 @@ list = {
   },
 }
 
-Test.ParseEffect()
+Test.ParseEffectList()
 Test.BuildEffect(list.p_base,list.p_proud)
 Test.OverwriteEffect()
