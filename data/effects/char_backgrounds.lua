@@ -1,9 +1,4 @@
-require "core/Utils"
-require "core/Effect"
-
-require "core/Test"
-       
---# char_backgrounds.lua
+    --# char_backgrounds.lua
 --# Inherent background traits for characters.
 
 char_backgrounds = {

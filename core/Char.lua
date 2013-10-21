@@ -12,7 +12,7 @@ function Char:AddEffect(effect_string)
   local effect = Effect:CreateEffect(effect_string)
   self.effects[effect_string] = {} -- this will need to be changed when we start stacking effects
   
-  --overwrite check
+  --overwrite flag check
   if effect.overwrites ~= nil then 
     local overwrite_table = effect.overwrites
     for k,v in pairs(overwrite_table) do
@@ -21,6 +21,44 @@ function Char:AddEffect(effect_string)
   end
   
   table.merge(effect,self.effects[effect_string])
+  self.CalcVITALS()
+end
+
+-- function Char:CalcStat(stat) finish this late ri'm tired  
+  
+function Char:CalcVITALS() -- break this up into chunks
+  local aVIG = self.effects.base_VIG
+  local aINT = self.effects.base_INT
+  local aTEN = self.effects.base_TEN
+  local aACU = self.effects.base_ACU
+  local aLIB = self.effects.base_LIB
+  local aSPD = self.effects.base_SPD
+
+  for k,v in pairs(self.effects) do
+    if type(v) == "table" then
+      for property,modifier in pairs(v) do
+        if property == "VIG" then
+          aVIG = aVIG + modifier
+        elseif property == "INT" then
+          aINT = aINT + modifier
+        elseif property == "TEN" then
+          aTEN = aTEN + modifier
+        elseif property == "ACU" then
+          aACU = aACU + modifier
+        elseif property == "LIB" then
+          aLIB = aLIB + modifier
+        elseif property == "SPD" then
+          aSPD = aSPD + modifier end
+      end
+    end
+  end
+  
+  self.effects.current_VIG = aVIG
+  self.effects.current_INT = aINT
+  self.effects.current_TEN = aTEN
+  self.effects.current_ACU = aACU
+  self.effects.current_LIB = aLIB
+  self.effects.current_SPD = aSPD
 end
 
 function newChar(new_char,char_type)
@@ -185,7 +223,6 @@ end
     for k,v in pairs(background) do
       if v == true then
         require( "data/effects/char_backgrounds" )
-        print(char_backgrounds[k])
         assert(char_backgrounds[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
         personality[k] = Effect:CreateEffect(k)
         end
@@ -197,10 +234,9 @@ end
   for k,v in pairs(personality) do
     if v == true then
       require( "data/effects/char_personalities" )
-      print(char_personalities[k])
       assert(char_personalities[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
       personality[k] = Effect:CreateEffect(k) --this needs to activate the effect too...
-      end
+    end
   end
   table.merge(personality,effects)
   
