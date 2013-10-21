@@ -6,9 +6,9 @@ require "core/Test"
 --# char_personalities.lua
 --# Inherent personality traits for characters.
 
-list = {
+char_personalities = {
 
-  p_base = {
+  base = {
     name = "PLACEHOLDER",
     expire_time = 0, -- personality traits don't expire
     expire_announce = true, -- but should always announce when they disappear
@@ -275,6 +275,6 @@ list = {
   },
 }
 
-Test.ParseEffectList()
-Test.BuildEffect(list.p_base,list.p_proud)
-Test.OverwriteEffect()
+--Test.ParseEffectList()
+--Test.BuildEffect(char_personalities.base,char_personalities.p_proud)
+--Test.OverwriteEffect()

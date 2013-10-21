@@ -13,7 +13,7 @@ function Test.ParseEffectList() -- gimme some output!
     }
   
   print("### TEST: Parse Personality Effects")
-  for e_name,e_property in pairs(list) do
+  for e_name,e_property in pairs(char_personalities) do
     
     for e_property,e_value in pairs(e_property) do
       if type(e_value)~="table"
@@ -26,7 +26,7 @@ function Test.ParseEffectList() -- gimme some output!
     end
     
   for key,value in pairs(required_properties) do
-    if table.haskey(list[e_name],value) == false
+    if table.haskey(char_personalities[e_name],value) == false
       and e_name ~= "p_base"
       then
        print("!!! Warning: Effect " .. e_name .. " is missing the " .. value .. " property.")

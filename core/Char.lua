@@ -119,21 +119,34 @@ end
   local function initBackground()
     local b = {}
     
-    local a = math.random(0,6)
+    local a = math.random(0,8)
     if a == 0 then 
-      b["b_maneuver"] = true
+      b["b_regular"] = true
+      b["b_engineer"] = true
     elseif a == 1 then 
-      b["b_fires"] = true
+      b["b_regular"] = true
+      b["b_infantry"] = true
     elseif a == 2 then 
+      b["b_regular"] = true
       b["b_armor"] = true
     elseif a == 3 then 
-      b["b_engineer"] = true  
+      b["b_regular"] = true
+      b["b_fires"] = true  
     elseif a == 4 then 
-      b["b_academic"] = true  
-    elseif a == 5 then 
-      b["b_support"] = true  
+      b["b_regular"] = true
+      b["b_logistics"] = true  
+    elseif a == 5 then
+      b["b_militia"] = true
+      b["b_engineer"] = true  
     elseif a == 6 then
       b["b_militia"] = true
+      b["b_logistics"] = true  
+    elseif a == 7 then
+      b["b_militia"] = true
+      b["b_academic"] = true  
+    elseif a == 8 then
+      b["b_militia"] = true
+      b["b_police"] = true  
     end
 
     return b
@@ -148,21 +161,35 @@ end
   end
   local char = {}
   local effects = {}
-  for k,v in pairs(initPersonality(3)) do effects[k] = v end
-  for k,v in pairs(initVITALS(total_points,char)) do effects[k] = v end
+  local personality = {}
+  local background = {}
+  for k,v in pairs(initPersonality(3)) do personality[k] = v end
+  for k,v in pairs(initVITALS(total_points,char)) do personality[k] = v end
   
   if char_type == "isfk" then
-    --for k,v in pairs(initBackground()) do effects[k] = v end
+    for k,v in pairs(initBackground()) do background[k] = v end
+    for k,v in pairs(background) do
+      if v == true then
+        require( "data/char_backgrounds" )
+        print(char_backgrounds[k])
+        assert(char_backgrounds[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
+        personality[k] = Effect:AddEffect(char_backgrounds.base,char_backgrounds[k]) --this needs to activate the effect too...
+        end
+    end
+    table.merge(background,effects)
+    
   end
   
-  for k,v in pairs(effects) do
+  for k,v in pairs(personality) do
     if v == true then
       require( "data/char_personalities" )
-      print(list[k])
-      assert(list[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
-      effects[k] = Effect:AddEffect(list.p_base,list[k]) --this needs to activate the effect too...
-    end
+      print(char_personalities[k])
+      assert(char_personalities[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
+      personality[k] = Effect:AddEffect(char_personalities.base,char_personalities[k]) --this needs to activate the effect too...
+      end
   end
+  table.merge(personality,effects)
+  
   char.effects = effects
   char.faction = char_type
   
