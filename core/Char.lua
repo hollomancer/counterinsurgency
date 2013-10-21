@@ -170,7 +170,7 @@ end
     for k,v in pairs(initBackground()) do background[k] = v end
     for k,v in pairs(background) do
       if v == true then
-        require( "data/char_backgrounds" )
+        require( "data/effects/char_backgrounds" )
         print(char_backgrounds[k])
         assert(char_backgrounds[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
         personality[k] = Effect:AddEffect(char_backgrounds.base,char_backgrounds[k]) --this needs to activate the effect too...
@@ -182,7 +182,7 @@ end
   
   for k,v in pairs(personality) do
     if v == true then
-      require( "data/char_personalities" )
+      require( "data/effects/char_personalities" )
       print(char_personalities[k])
       assert(char_personalities[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
       personality[k] = Effect:AddEffect(char_personalities.base,char_personalities[k]) --this needs to activate the effect too...
