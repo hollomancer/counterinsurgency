@@ -7,22 +7,27 @@ Effect = Prototype{
 }
 
 Effect.name = "NO_EFFECT_NAME"
+Effect.effects = {} --this should not be necessary and i need to find out how to get rid of it
 
-function Effect:AddEffect(base_effect,target_effect)
+function Effect:CreateEffect(effect)
+  local new_effect = {}
+  local base_effect = {}
   local built_effect = {}
-  table.merge(base_effect,built_effect)
-  table.merge(target_effect,built_effect)
   
-  if built_effect.overwrites ~= nil then
-    local overwrite_table = built_effect.overwrites
-    for k,v in pairs(overwrite_table) do
-      print("overwrite " .. v)
-    end
-    
---    if built_effect[overwrites] == self[overwrites]
---      then self.overwrites. = nil
---    end
+  if string.sub(effect,1,2) == "p_" then
+    require( "data/effects/char_personalities" )
+    base_effect = char_personalities.base
+    new_effect = char_personalities[effect]
+  elseif string.sub(effect,1,2) == "b_" then
+    require( "data/effects/char_backgrounds" )
+    base_effect = char_backgrounds.base
+    new_effect = char_backgrounds[effect]
+  else
+    assert(nil,"Effect not supported!")
   end
   
+  table.merge(base_effect,built_effect)
+  table.merge(new_effect,built_effect)
+
   return built_effect
 end

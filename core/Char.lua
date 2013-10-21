@@ -7,7 +7,21 @@ Char.name = "PLACEHOLDER"
 Char.desc_short = "PLACEHOLDER"
 Char.desc_long = "PLACEHOLDER"
 Char.effects = {}
-Char:mixin(Effect,"AddEffect")
+
+function Char:AddEffect(effect_string)
+  local effect = Effect:CreateEffect(effect_string)
+  self.effects[effect_string] = {} -- this will need to be changed when we start stacking effects
+  
+  --overwrite check
+  if effect.overwrites ~= nil then 
+    local overwrite_table = effect.overwrites
+    for k,v in pairs(overwrite_table) do
+      self.effects[v] = nil
+    end
+  end
+  
+  table.merge(effect,self.effects[effect_string])
+end
 
 function newChar(new_char,char_type)
   math.randomseed(os.time())
@@ -173,7 +187,7 @@ end
         require( "data/effects/char_backgrounds" )
         print(char_backgrounds[k])
         assert(char_backgrounds[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
-        personality[k] = new_char:AddEffect(char_backgrounds.base,char_backgrounds[k]) --this needs to activate the effect too...
+        personality[k] = Effect:CreateEffect(k)
         end
     end
     table.merge(background,effects)
@@ -185,7 +199,7 @@ end
       require( "data/effects/char_personalities" )
       print(char_personalities[k])
       assert(char_personalities[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
-      personality[k] = Effect:AddEffect(char_personalities.base,char_personalities[k]) --this needs to activate the effect too...
+      personality[k] = Effect:CreateEffect(k) --this needs to activate the effect too...
       end
   end
   table.merge(personality,effects)
@@ -196,6 +210,7 @@ end
   table.merge(char,new_char)
   return new_char
 end
+
 require "core/Test"
 
 Test.CharGenISFK()

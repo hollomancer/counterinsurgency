@@ -86,12 +86,6 @@ function Test.CharGenISFK()
   test_char1.desc_short = "Test Character 1"
   test_char1.desc_long = "I am a test character 1."
 
-  require( "data/effects/char_personalities" )
-  test_char1.effects.p_proud = test_char1:AddEffect(char_personalities.base,char_personalities.p_proud)
-  
-  require( "data/effects/char_personalities" )
-  test_char1.effects.p_humble = test_char1:AddEffect(char_personalities.base,char_personalities.p_humble)
-
   for k,v in pairs(test_char1) do print (k,v) end
   for k,v in pairs(test_char1.effects) do print (k,v) end
   
