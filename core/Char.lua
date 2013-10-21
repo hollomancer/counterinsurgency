@@ -7,11 +7,11 @@ Char.name = "PLACEHOLDER"
 Char.desc_short = "PLACEHOLDER"
 Char.desc_long = "PLACEHOLDER"
 Char.effects = {}
+Char:mixin(Effect,"AddEffect")
 
 function newChar(new_char,char_type)
   math.randomseed(os.time())
   local new_char = Char:clone()
-  
   local function initPersonality(numPersonalities)
     local p = {}
     for i = 1,numPersonalities do
@@ -173,7 +173,7 @@ end
         require( "data/effects/char_backgrounds" )
         print(char_backgrounds[k])
         assert(char_backgrounds[k],"Attempting to read an unknown effect (or effect was nil)") -- make sure the newChar process uses effects that actually exist
-        personality[k] = Effect:AddEffect(char_backgrounds.base,char_backgrounds[k]) --this needs to activate the effect too...
+        personality[k] = new_char:AddEffect(char_backgrounds.base,char_backgrounds[k]) --this needs to activate the effect too...
         end
     end
     table.merge(background,effects)
@@ -199,4 +199,4 @@ end
 require "core/Test"
 
 Test.CharGenISFK()
-Test.CharGenLN()
+--Test.CharGenLN()
