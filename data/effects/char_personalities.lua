@@ -1,8 +1,3 @@
-require "core/Utils"
-require "core/Effect"
-
-require "core/Test"
-       
 --# char_personalities.lua
 --# Inherent personality traits for characters.
 

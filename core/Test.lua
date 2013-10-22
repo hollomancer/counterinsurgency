@@ -99,5 +99,11 @@ function Test.CharGenLN()
   test_char2.name = "test_char2"
   test_char2.desc_short = "Test Character 2"
   test_char2.desc_long = "I am a test character 2."
+  
+  
+  for k,v in pairs(test_char2) do print (k,v) end
+  test_char2:CalcVITALS()
+  for k,v in pairs(test_char2.effects) do print (k,v) end
+  
   print("### END: Generate LN Character ###")
 end

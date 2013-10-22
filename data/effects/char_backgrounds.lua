@@ -1,4 +1,4 @@
-    --# char_backgrounds.lua
+--# char_backgrounds.lua
 --# Inherent background traits for characters.
 
 char_backgrounds = {
