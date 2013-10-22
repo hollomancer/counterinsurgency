@@ -67,6 +67,8 @@ function CreateEffect(effect)
     require( "data/effects/char_backgrounds" )
     base_effect = char_backgrounds.base
     new_effect = char_backgrounds[effect]
+  elseif effect ~= type("string") then
+    assert(nil,"CreateEffect did not receive a string.")
   else
     assert(nil,"Effect not supported!")
   end
