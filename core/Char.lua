@@ -4,8 +4,14 @@ require( "core/Actor" )
 Char = Actor:clone()
 
 function newChar(new_char,char_type)
-  math.randomseed(os.time())
   local new_char = Char:clone()
+  local char = {}
+  local effects = {}
+  local personality = {}
+  local background = {}
+  local stats = {}
+  
+  math.randomseed(os.time())
   
   local function initVITALS(points,char)
     local VIG = 0
@@ -85,21 +91,26 @@ function newChar(new_char,char_type)
 
     return b
   end
-
   
-  
+  -- faction-specific information
   if char_type == "isfk" then
-    total_points = math.random(300,350)
+    stats.age = math.random(17,45)
+    total_points = math.random(300,300+stats.age)
+    --background[k] = CreateEffect(k)
     elseif char_type == "ln" then
-      total_points = math.random(200,250)
+      stats.age = math.random(14,64)
+      total_points = math.random(225,225+stats.age)
   end
-  local char = {}
-  local effects = {}
-  local personality = {}
-  local background = {}
-  local stats = {}
-  
-  for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
+  if stats.age <= 22 then
+    background["b_young"] = CreateEffect("b_young")
+    elseif stats.age > 28 then
+      background["b_seasoned"] = CreateEffect("b_seasoned")
+    elseif stats.age > 39 and char_type == "isfk" then
+      background["b_veteran"] = CreateEffect("b_veteran")
+    elseif stats.age > 50 and char_type == "ln" then
+      background["b_elder"] = CreateEffect("b_elder")
+  end
+        
   char.stats = stats
   
   -- since backgrounds are more tightly associated with each other, this old functionality is actually better for our needs
@@ -141,6 +152,9 @@ function newChar(new_char,char_type)
     end
   end
   table.merge(personality,effects)
+  
+  -- add basic stats
+  for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
   
   char.effects = effects
   char.faction = char_type

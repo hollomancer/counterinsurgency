@@ -113,5 +113,43 @@ char_backgrounds = {
     warrior_ethos = 1,
     humanitarian_ethos = 1,
   },
-
+  
+  b_young = {
+    name = "b_young",
+    desc_short = "Young", 
+    desc_long = "Young, dumb, and full of... enthusiasm.",
+    VIG = 3,
+    INT = -2,
+    TEN = 1,
+    ACU = 1,
+    LIB = 1,
+    SPD = 3,
+  },
+  
+  b_seasoned = {
+    name = "b_seasoned",
+    desc_short = "Seasoned", 
+    desc_long = "I've seen some things, man, and some stuff. I wouldn't recommend it.",
+    VIG = 1,
+    INT = 1,
+    TEN = 2,
+    SPD = 1,
+  },
+  
+  b_veteran = {
+    name = "b_veteran",
+    desc_short = "Veteran", 
+    desc_long = "There are old soldiers, and bold soldiers, but no old, bold soldiers.",
+    INT = 3,
+    TEN = 3,
+  },
+  
+  b_elder = {
+    name = "b_elder",
+    desc_short = "Elder", 
+    desc_long = "I am not young enough to know everything.",
+    INT = 4,
+    TEN = 1,
+    LIB = 2,
+  },
 }
