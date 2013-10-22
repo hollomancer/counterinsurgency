@@ -99,17 +99,18 @@ function newChar(new_char,char_type)
     --background[k] = CreateEffect(k)
     elseif char_type == "ln" then
       stats.age = math.random(14,64)
-      total_points = math.random(225,225+stats.age)
+      total_points = math.random(250,250+stats.age)
   end
   if stats.age <= 22 then
     background["b_young"] = CreateEffect("b_young")
-    elseif stats.age > 28 then
-      background["b_seasoned"] = CreateEffect("b_seasoned")
-    elseif stats.age > 39 and char_type == "isfk" then
-      background["b_veteran"] = CreateEffect("b_veteran")
     elseif stats.age > 50 and char_type == "ln" then
       background["b_elder"] = CreateEffect("b_elder")
+    elseif stats.age > 39 and char_type == "isfk" then
+      background["b_veteran"] = CreateEffect("b_veteran")
+    elseif stats.age > 33 then
+      background["b_seasoned"] = CreateEffect("b_seasoned")
   end
+  table.merge(background,effects)
         
   char.stats = stats
   
@@ -175,4 +176,4 @@ end
 require "core/Test"
 
 Test.CharGenISFK()
---Test.CharGenLN()
+Test.CharGenLN()
