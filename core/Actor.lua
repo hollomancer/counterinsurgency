@@ -1,9 +1,5 @@
---[[ Actor.lua
-What does this module need to do?
-1) generate states for actors
-2) process reaction checks
-3) read/write actor data from DataTerp
-]]
+--# Actor.lua
+--# characters and factions share the methods and data within, as a base prototype.
 
 local Prototype = require( "core/extPrototype" )
 
@@ -13,11 +9,12 @@ Actor = Prototype{
   use_Prototype_delegation = true,
 }
 
-Actor.name = "NO_ACTOR_NAME"
+Actor.name = "PLACEHOLDER"
 Actor.desc_short = "PLACEHOLDER"
 Actor.desc_long = "PLACEHOLDER"
 Actor.effects = {}
 Actor.stats = {}
+Actor.relations = {}
 
 function Actor:CalcStat(stat_string)
   local base = "base_" .. stat_string
