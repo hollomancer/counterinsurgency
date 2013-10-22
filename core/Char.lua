@@ -131,10 +131,11 @@ function newChar(new_char,char_type)
   for k,v in pairs(q1) do
     if v ~= type("table") then
     personality[v] = CreateEffect(v)
-      if personality.overwrites ~= nil then 
-        local overwrite_table = personality.overwrites
+      -- don't forget to eliminate contradictory effects. TODO: make this a function, this is something that needs to be checked in various places
+      if personality[v].overwrites ~= nil then 
+        local overwrite_table = personality[v].overwrites
         for k,v in pairs(overwrite_table) do
-          personality.effects[v] = nil
+          personality[v] = nil
         end
       end
     end
