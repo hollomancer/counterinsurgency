@@ -28,7 +28,7 @@ function Actor:CalcStat(stat_string)
     if type(v) == "table" then
       for property,modifier in pairs(v) do
         if property == stat_string then
-          current = current + modifier
+          current = current + modifier[3]
         end
       end
     end
