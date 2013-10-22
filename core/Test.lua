@@ -86,9 +86,10 @@ function Test.CharGenISFK()
   test_char1.desc_short = "Test Character 1"
   test_char1.desc_long = "I am a test character 1."
 
-  for k,v in pairs(test_char1) do print (k,v) end
+  for k,v in pairsByKeys(test_char1) do print (k,v) end
   test_char1:CalcVITALS()
-  for k,v in pairs(test_char1.effects) do print (k,v) end
+  for k,v in pairsByKeys(test_char1.effects) do print (k,v) end
+  for k,v in pairsByKeys(test_char1.stats) do print (k,v) end
   
   print("### END: Generate ISFK Character ###")
 end
@@ -104,6 +105,7 @@ function Test.CharGenLN()
   for k,v in pairs(test_char2) do print (k,v) end
   test_char2:CalcVITALS()
   for k,v in pairs(test_char2.effects) do print (k,v) end
+  for k,v in pairs(test_char2.stats) do print (k,v) end
   
   print("### END: Generate LN Character ###")
 end

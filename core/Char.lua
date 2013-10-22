@@ -89,7 +89,7 @@ function newChar(new_char,char_type)
   
   
   if char_type == "isfk" then
-    total_points = math.random(250,300)
+    total_points = math.random(300,350)
     elseif char_type == "ln" then
       total_points = math.random(200,250)
   end
@@ -100,7 +100,7 @@ function newChar(new_char,char_type)
   local stats = {}
   
   for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
-  table.merge(stats,effects) 
+  char.stats = stats
   
   -- since backgrounds are more tightly associated with each other, this old functionality is actually better for our needs
   if char_type == "isfk" then
@@ -161,4 +161,4 @@ end
 require "core/Test"
 
 Test.CharGenISFK()
-Test.CharGenLN()
+--Test.CharGenLN()

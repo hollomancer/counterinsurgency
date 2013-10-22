@@ -17,11 +17,12 @@ Actor.name = "NO_ACTOR_NAME"
 Actor.desc_short = "PLACEHOLDER"
 Actor.desc_long = "PLACEHOLDER"
 Actor.effects = {}
+Actor.stats = {}
 
 function Actor:CalcStat(stat_string)
   local base = "base_" .. stat_string
-  local current = self.effects[base]
-  local finished_effect = "current_" .. stat_string
+  local current = self.stats[base]
+  local finished_stat = "current_" .. stat_string
   
   for k,v in pairs(self.effects) do
     if type(v) == "table" then
@@ -33,7 +34,7 @@ function Actor:CalcStat(stat_string)
     end
   end
   
-  self.effects[finished_effect] = current
+  self.stats[finished_stat] = current
 end  
 
 
