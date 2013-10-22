@@ -107,7 +107,7 @@ function newChar(new_char,char_type)
       background["b_elder"] = CreateEffect("b_elder")
     elseif stats.age > 39 and char_type == "isfk" then
       background["b_veteran"] = CreateEffect("b_veteran")
-    elseif stats.age > 33 then
+    elseif stats.age > 33 and char_type == "isfk" then
       background["b_seasoned"] = CreateEffect("b_seasoned")
   end
   table.merge(background,effects)
