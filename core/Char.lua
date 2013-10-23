@@ -4,6 +4,7 @@ require( "core/Actor" )
 Char = Actor:clone()
 
 function newChar(new_char,char_type)
+  
   local new_char = Char:clone()
   local char = {}
   local effects = {}
@@ -22,8 +23,8 @@ function newChar(new_char,char_type)
     local SPD = 0
   
     for i = 1,points do
-      
       local b = math.random(0,6)
+    
       if b > 5 and VIG <= 65 and points > 0 then
         VIG = VIG + 1
         points = points - 1
