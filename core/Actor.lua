@@ -15,6 +15,7 @@ Actor.desc_long = "PLACEHOLDER"
 Actor.effects = {}
 Actor.stats = {}
 Actor.relations = {}
+Actor.groups = {}
 
 function Actor:CalcStat(stat_string)
   local base = "base_" .. stat_string
@@ -54,7 +55,7 @@ function Actor:AddEffect(effect_string)
   end
   
   table.merge(effect,self.effects[effect_string])
-  self.CalcVITALS()
+  self:CalcVITALS()
 end
 
 
@@ -62,7 +63,6 @@ function CreateEffect(effect)
   local new_effect = {}
   local base_effect = {}
   local built_effect = {}
-  
   if string.sub(effect,1,2) == "p_" then
     require( "data/effects/char_personalities" )
     base_effect = char_personalities.base
@@ -81,4 +81,32 @@ function CreateEffect(effect)
   table.merge(new_effect,built_effect)
 
   return built_effect
+end
+
+
+function Actor:Rel(target)
+  local reaction = 0
+  
+  for k,v in pairs(self.effects) do
+    if type(v) == "table" then
+      for property,condition in pairs(v) do
+        if property == "relation" then       
+          for condition,modifier in pairs(v[property]) do
+            if target.effects[condition] ~= nil and condition == target.effects[condition].name then
+              if modifier[2] == "+"  or "-" then
+                reaction = reaction + modifier[3]
+                elseif modifier[2] == "*" then
+                reaction = reaction * modifier[3]
+                elseif modifier[2] == "/" then
+                reaction = reaction * modifier[3]
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  
+  return reaction
+  
 end

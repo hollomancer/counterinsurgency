@@ -6,7 +6,7 @@ Char = Actor:clone()
 function newChar(new_char,char_type)
   
   local new_char = Char:clone()
-  local char = {}
+  local char = {groups={}}
   local effects = {}
   local personality = {}
   local background = {}
@@ -159,7 +159,7 @@ function newChar(new_char,char_type)
   for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
   
   char.effects = effects
-  char.faction = char_type
+  table.insert(char.groups,char_type)
   
   table.merge(char,new_char)
   return new_char

@@ -19,8 +19,11 @@ char_personalities = {
     INT = {'actor','+',1},
     ACU = {'actor','+',1},
     reputation = {'actor','*',-0.1},
-    overwrites = {"p_proud"}
-    -- They tend to minorly like each other and minorly dislike their opposite, Proud characters.
+    overwrites = {"p_proud"},
+    relation = {
+      p_proud = {'actor','-',-5},
+      p_humble = {'actor','+',5},
+      }
   },
 
   p_proud = {
@@ -32,8 +35,10 @@ char_personalities = {
     LIB = {'actor','+',1},
     reputation = {'actor','*',0.1},
     morale_multiply = 0.25,
-    overwrites = {"p_humble"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Humble characters.
+    overwrites = {"p_humble"},
+    relation = {
+      p_humble = {'actor','-',-5},
+      }
   },
 
   p_deceptive = {
@@ -41,7 +46,11 @@ char_personalities = {
     desc_short = "Deceptive",
     desc_long = "PLACEHOLDER",
     ACU = {'actor','+',1},
-    overwrites = {"p_honest"}
+    overwrites = {"p_honest"},
+    relation = {
+      p_deceptive = {'actor','-',-5},
+      p_honest = {'actor','-',-5},
+      }
     -- They tend to minorly dislike each other and minorly dislike their opposite, Honest characters.
   },
 
@@ -50,8 +59,11 @@ char_personalities = {
     desc_short = "Honest",
     desc_long = "PLACEHOLDER",
     TEN = {'actor','+',1},
-    overwrites = {"p_deceptive"}
-    -- They tend to minorly dislike each other and minorly dislike their opposite, Honest characters.
+    overwrites = {"p_deceptive"},
+    relation = {
+      p_deceptive = {'actor','-',-5},
+      p_honest = {'actor','-',5},
+      }
   },
 
   p_progressive = {
@@ -59,8 +71,11 @@ char_personalities = {
     desc_short = "Progressive",
     desc_long = "You can never plan the future by the past.",
     TEN = {'actor','+',1},
-    overwrites = {"p_conservative"}
-    -- They tend to strongly like each other, and strongly dislike their opposite, Conservative characters.
+    overwrites = {"p_conservative"},
+    relation = {
+      p_progressive = {'actor','-',10},
+      p_conservative = {'actor','-',-10},
+      }
   },
 
   p_conservative = {
@@ -68,8 +83,11 @@ char_personalities = {
     desc_short = "Conservative",
     desc_long = "It is not unusual to mistake change for progress.",
     TEN = {'actor','+',1},
-    overwrites = {"p_progressive"}
-    -- They tend to strongly like each other, and strongly dislike their opposite, Progressive characters.
+    overwrites = {"p_progressive"},
+    relation = {
+      p_progressive = {'actor','-',-10},
+      p_conservative = {'actor','-',10},
+      }
   },
 
   p_cautious = {
@@ -79,8 +97,10 @@ char_personalities = {
     INT = {'actor','+',1},
     ACU = {'actor','+',1},
     reputation = {'actor','*',-0.1},
-    overwrites = {"p_bold"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Bold characters.
+    overwrites = {"p_bold"},
+    relation = {
+      p_bold = {'actor','-',-5},
+      }
   },
 
   p_bold = {
@@ -90,8 +110,10 @@ char_personalities = {
     VIG = {'actor','+',1},
     LIB = {'actor','+',1},
     reputation = {'actor','*',0.1},
-    overwrites = {"p_cautious"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Cautious characters.
+    overwrites = {"p_cautious"},
+    relation = {
+      p_cautious = {'actor','-',-5},
+      }
   },
 
   p_idealistic = {
@@ -101,8 +123,11 @@ char_personalities = {
     LIB = {'actor','+',1},
     TEN = {'actor','+',1},
     reputation = {'actor','*',0.1},
-    overwrites = {"p_pragmatic"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Cautious characters.
+    overwrites = {"p_pragmatic"},
+    relation = {
+      p_idealistic = {'actor','-',10},      
+      p_pragmatic = {'actor','-',-5},
+      }
   },
 
   p_pragmatic = {
@@ -112,8 +137,11 @@ char_personalities = {
     LIB = {'actor','+',1},
     INT = {'actor','+',1},
     reputation = {'actor','*',-0.1},
-    overwrites = {"p_idealistic"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Cautious characters.
+    overwrites = {"p_idealistic"},
+    relation = {
+      p_pragmatic = {'actor','-',10},      
+      p_idealistic = {'actor','-',-5},
+      }
   },
 
   p_lazy = {
@@ -126,7 +154,7 @@ char_personalities = {
     SPD = {'actor','+',-1},
     reputation = {'actor','*',-0.1},
     overwrites = {"p_diligent"}
-    -- Regular characters have a minor dislike of lazy characters.
+    -- Regular characters have a minor dislike of lazy characters, so I need a 'universal dislike' option.
   },
 
   p_diligent = {
@@ -138,8 +166,11 @@ char_personalities = {
     ACU = {'actor','+',1},
     SPD = {'actor','+',1},
     reputation = {'actor','*',0.1},
-    overwrites = {"p_lazy"}
-    -- Diligent characters like other diligent characters, and strongly dislike lazy characters.
+    overwrites = {"p_lazy"},
+    relation = {
+      p_diligent = {'actor','-',5},      
+      p_lazy = {'actor','-',-10},
+      }
   },
 
   p_tolerant = {
@@ -147,8 +178,10 @@ char_personalities = {
     desc_short = "Tolerant",
     desc_long = "PLACEHOLDER",
     INT = {'actor','+',1},
-    overwrites = {"p_militant"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Militant characters.
+    overwrites = {"p_militant"},
+    relation = {
+      p_militant = {'actor','-',-5},
+      }
   },
 
   p_militant = {
@@ -157,8 +190,10 @@ char_personalities = {
     desc_long = "PLACEHOLDER",
     VIG = {'actor','+',1},
     TEN = {'actor','+',1},
-    overwrites = {"p_tolerant"}
-    -- They have no relation to each other, and tend to minorly dislike their opposite, Tolerant characters.
+    overwrites = {"p_tolerant"},
+    relation = {
+      p_tolerant = {'actor','-',-5},
+      }
   },
 
   p_mildmannered = {

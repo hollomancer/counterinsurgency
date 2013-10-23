@@ -88,10 +88,13 @@ function Test.CharGenISFK()
 
   for k,v in pairsByKeys(test_char1) do print (k,v) end
   test_char1:CalcVITALS()
+  print("--- Groups ---")
+  for k,v in pairsByKeys(test_char1.groups) do print (v) end
   print("--- Effects ---")
+--  test_char1:AddEffect("p_diligent")
   for k,v in pairsByKeys(test_char1.effects) do print (k,v) end
-  print("--- Stats ---")
-  for k,v in pairsByKeys(test_char1.stats) do print (k,v) end
+ -- print("--- Stats ---")
+ -- for k,v in pairsByKeys(test_char1.stats) do print (k,v) end
   
   print("### END: Generate ISFK Character ###")
 end
@@ -106,10 +109,14 @@ function Test.CharGenLN()
   
   for k,v in pairsByKeys(test_char2) do print (k,v) end
   test_char2:CalcVITALS()
+  print("--- Groups ---")
+  for k,v in pairsByKeys(test_char2.groups) do print (v) end
   print("--- Effects ---")
+--  test_char2:AddEffect("p_lazy")
   for k,v in pairsByKeys(test_char2.effects) do print (k,v) end
-  print("--- Stats ---")
-  for k,v in pairsByKeys(test_char2.stats) do print (k,v) end
-  
+ -- print("--- Stats ---")
+ -- for k,v in pairsByKeys(test_char2.stats) do print (k,v) end
+  print("two rel one", test_char2:Rel(test_char1))
+  print("one rel two", test_char1:Rel(test_char2))
   print("### END: Generate LN Character ###")
 end
