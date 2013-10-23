@@ -8,11 +8,6 @@ require( "core/Actor" )
 
 Faction = Actor:clone()
 
-Faction.name = "NO_FACTION_NAME"
-Faction.type = "NO_FACTION_TYPE"
-Faction.effects = {}
-Faction.relations = {}
-Faction.strength = 50
-Faction.members = {}
-
-print(Faction.name)
+Faction.name = "PLACEHOLDER"
+Faction.type = "PLACEHOLDER"
+Faction.members = {} -- this only copies the STRING of the char, not the char table itself. be careful
