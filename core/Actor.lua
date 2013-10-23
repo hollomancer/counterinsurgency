@@ -24,7 +24,7 @@ function Actor:Modifier(array,output)
     elseif array[2] == "*" then
     output = output * array[3]
     elseif modifier[2] == "/" then
-    output = output * array[3]
+    output = output / array[3]
   end
   
   return output
