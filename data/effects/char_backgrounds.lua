@@ -19,6 +19,11 @@ char_backgrounds = {
     TEN = {actor,'+',2},
     LIB = {actor,'+',-1},
     warrior_ethos = {actor,'+',2},
+    relation = {
+      p_veteran = {'actor','-',5},
+      p_lazy = {'actor','-',-10},
+      b_militia = {'actor','-',-5},
+      }
   },
 
   b_militia = {
@@ -29,6 +34,9 @@ char_backgrounds = {
     TEN = {actor,'+',1},
     warrior_ethos = {actor,'+',1},
     humanitarian_ethos = {actor,'+',1},
+    relation = {
+      p_lazy = {'actor','-',-5},
+      }
   },
 
   b_civilian = {
@@ -49,6 +57,10 @@ char_backgrounds = {
     LIB = {actor,'+',-1},
     SPD = {actor,'+',1},
     warrior_ethos = {actor,'+',1},
+    relation = {
+      b_intellectual = {'actor','-',-5},
+      b_logistics = {'actor','-',-5},
+      }
   },
   
   b_armor = {
@@ -100,6 +112,9 @@ char_backgrounds = {
     INT = {actor,'+',3},
     ACU = {actor,'+',2},
     LIB = {actor,'+',1},
+    relation = {
+      p_regular = {'actor','-',-5},
+      }
   },
   
   b_police = {
@@ -112,6 +127,9 @@ char_backgrounds = {
     LIB = {actor,'+',1},
     warrior_ethos = {actor,'+',1},
     humanitarian_ethos = {actor,'+',1},
+    relation = {
+      b_regular = {'actor','-',5},
+      }
   },
   
   b_young = {

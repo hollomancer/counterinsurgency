@@ -11,6 +11,15 @@ function table.haskey(table, element)
   return false
 end
 
+function table.hasval(table, element)
+  for _, value in pairs(table) do
+    if value == element then
+      return true
+    end
+  end
+  return false
+end
+
 function pairsByKeys (t, f)
   local a = {}
   for n in pairs(t) do table.insert(a, n) end

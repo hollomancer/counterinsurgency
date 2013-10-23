@@ -17,6 +17,20 @@ Actor.stats = {}
 Actor.relations = {}
 Actor.groups = {}
 
+function Actor:Modifier(array,output)
+  
+  if array[2] == "+"  or "-" then
+    output = output + array[3]
+    elseif array[2] == "*" then
+    output = output * array[3]
+    elseif modifier[2] == "/" then
+    output = output * array[3]
+  end
+  
+  return output
+  
+end      
+
 function Actor:CalcStat(stat_string)
   local base = "base_" .. stat_string
   local current = self.stats[base]
@@ -26,19 +40,16 @@ function Actor:CalcStat(stat_string)
     if type(v) == "table" then
       for property,modifier in pairs(v) do
         if property == stat_string then
-          if modifier[2] == "+"  or "-" then
-          current = current + modifier[3]
-          elseif modifier[2] == "*" then
-          current = current * modifier[3]
-          elseif modifier[2] == "/" then
-          current = current * modifier[3]
-          end
+          current = self:Modifier(modifier,current)
+          elseif property == "reputation" and string.sub(stat_string,1,4) == "rep_" then
+          current = self:Modifier(modifier,current)
         end
       end
     end
   end
   
   self.stats[finished_stat] = current
+  
 end  
 
 
@@ -85,27 +96,27 @@ end
 
 
 function Actor:Rel(target)
-  local reaction = 0
   
+  local reaction = 0
+
   for k,v in pairs(self.effects) do
     if type(v) == "table" then
       for property,condition in pairs(v) do
         if property == "relation" then       
           for condition,modifier in pairs(v[property]) do
             if target.effects[condition] ~= nil and condition == target.effects[condition].name then
-              if modifier[2] == "+"  or "-" then
-                reaction = reaction + modifier[3]
-                elseif modifier[2] == "*" then
-                reaction = reaction * modifier[3]
-                elseif modifier[2] == "/" then
-                reaction = reaction * modifier[3]
-              end
+              reaction = self:Modifier(modifier,reaction)
             end
           end
         end
       end
     end
   end
+  
+  if table.hasval(target.groups,"ln") == true then
+    self:CalcStat("rep_LN")
+    reaction = reaction + self.stats.current_rep_LN
+    end
   
   return reaction
   
