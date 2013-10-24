@@ -69,6 +69,42 @@ function Actor:AddEffect(effect_string)
   self:CalcVITALS()
 end
 
+function Actor:RemoveEffect(effect_string)
+  self.effects[effect_string] = nil
+end
+
+function Actor:Rel(target)
+  
+  local reaction = 0
+
+  for k,v in pairs(self.effects) do
+    if type(v) == "table" then
+      for property,condition in pairs(v) do
+        if property == "relation" then       
+          for condition,modifier in pairs(v[property]) do
+            if target.effects[condition] ~= nil and condition == target.effects[condition].name then
+              reaction = self:Modifier(modifier,reaction)
+            end
+          end
+        end
+      end
+    end
+  end
+  
+  if table.hasval(target.groups,"ln") == true then
+    self:CalcStat("rep_LN")
+    reaction = reaction + self.stats.current_rep_LN
+    end
+  
+  if table.hasval(target.groups,"isfk") == true then
+    self:CalcStat("rep_ISFK")
+    reaction = reaction + self.stats.current_rep_ISFK
+    end
+  
+  return reaction
+  
+end
+
 
 function CreateEffect(effect)
   local new_effect = {}
@@ -94,30 +130,16 @@ function CreateEffect(effect)
   return built_effect
 end
 
+--the bottom two functions should sit on the top-level game file
 
-function Actor:Rel(target)
-  
-  local reaction = 0
-
-  for k,v in pairs(self.effects) do
-    if type(v) == "table" then
-      for property,condition in pairs(v) do
-        if property == "relation" then       
-          for condition,modifier in pairs(v[property]) do
-            if target.effects[condition] ~= nil and condition == target.effects[condition].name then
-              reaction = self:Modifier(modifier,reaction)
-            end
-          end
-        end
-      end
-    end
+function AddGroupEffect(group,effect_string)
+  for k,v in pairs(groups[group]) do
+    k:AddEffect(effect_string)
   end
-  
-  if table.hasval(target.groups,"ln") == true then
-    self:CalcStat("rep_LN")
-    reaction = reaction + self.stats.current_rep_LN
-    end
-  
-  return reaction
-  
+end
+
+function RemoveGroupEffect(group,effect_string)
+  for k,v in pairs(groups[group]) do
+    k:RemoveEffect(effect_string)
+  end
 end

@@ -86,10 +86,11 @@ function Test.CharGenISFK()
   test_char1.desc_short = "Test Character 1"
   test_char1.desc_long = "I am a test character 1."
   test_char1.stats.base_rep_LN = math.random(-10,10)
+  test_char1.stats.base_rep_ISFK = math.random(-10,10)
 
   for k,v in pairsByKeys(test_char1) do print (k,v) end
   test_char1:CalcVITALS()
-  test_char1:CalcStat("rep_LN")
+  test_char1:CalcReputation()
   print("--- Groups ---")
   for k,v in pairsByKeys(test_char1.groups) do print (v) end
   print("--- Effects ---")
@@ -108,10 +109,11 @@ function Test.CharGenLN()
   test_char2.desc_short = "Test Character 2"
   test_char2.desc_long = "I am a test character 2."
   test_char2.stats.base_rep_LN = math.random(-10,10)
+  test_char2.stats.base_rep_ISFK = math.random(-10,10)
   
   for k,v in pairsByKeys(test_char2) do print (k,v) end
   test_char2:CalcVITALS()
-  test_char2:CalcStat("rep_LN")
+  test_char1:CalcReputation()
   print("--- Groups ---")
   for k,v in pairsByKeys(test_char2.groups) do print (v) end
   print("--- Effects ---")

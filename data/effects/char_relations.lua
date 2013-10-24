@@ -1,3 +1,47 @@
+--# char_relations.lua
+--# Relation effects for characters.
+
+char_personalities = {
+
+  base = {
+    name = "PLACEHOLDER",
+    desc_short = "PLACEHOLDER",
+    desc_long = "PLACEHOLDER",
+    targets = {
+      }
+  },
+
+  rc_curious = {
+    name = "rc_curious",
+    desc_short = "Curious",
+    desc_long = "Hasn't made their mind up about you...",
+    -- +5 reaction on first contact
+  },
+
+  rc_unfamiliar = {
+    name = "rc_unfamiliar",
+    desc_short = "Unfamiliar",
+    desc_long = "Hasn't made their mind up about you...",
+    -- -15 reaction on first contact
+  },
+
+  rc_friends = { -- need to figure out a good way to do paired effects...
+    name = "rc_friends",
+    desc_short = "Friends",
+    relation = {
+      rc_friends = {'actor','+',20},
+    }
+    
+  rc_grudge = {
+    name = "rc_grudge",
+    desc_short = "Grudge",
+    relation = {
+      rc_grudge = {'actor','-',30},
+    }
+  },
+
+}
+
 --[[ReactionModifiers.lua
 
 L.N. EQUIPMENT REACTION MODIFIERS

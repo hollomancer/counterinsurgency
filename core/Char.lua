@@ -174,6 +174,11 @@ function Char:CalcVITALS()
   self:CalcStat("SPD")
 end
 
+function Char:CalcReputation()
+  self:CalcStat("rep_LN")
+  self:CalcStat("rep_ISFK")
+end
+
 require "core/Test"
 
 Test.CharGenISFK()
