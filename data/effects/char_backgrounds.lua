@@ -109,6 +109,7 @@ char_backgrounds = {
   b_academic = {
     name = "b_academic",
     desc_short = "Background: Academic",
+    desc_long = "There's nothing more gorgeous than the view from an ivory tower.",
     INT = {actor,'+',3},
     ACU = {actor,'+',2},
     LIB = {actor,'+',1},
