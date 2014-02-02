@@ -31,6 +31,7 @@ char_personalities = {
     relation = {
       rc_friends = {'actor','+',20},
     }
+  },
     
   rc_grudge = {
     name = "rc_grudge",

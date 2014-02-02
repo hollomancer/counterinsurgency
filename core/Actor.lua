@@ -118,6 +118,10 @@ function CreateEffect(effect)
     require( "data/effects/char_backgrounds" )
     base_effect = char_backgrounds.base
     new_effect = char_backgrounds[effect]
+  elseif string.sub(effect,1,2) == "sk_" then
+    require( "data/effects/char_skills" )
+    base_effect = char_skill.base
+    new_effect = char_skill[effect]
   elseif effect ~= type("string") then
     assert(nil,"CreateEffect did not receive a string.")
   else
