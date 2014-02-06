@@ -5,10 +5,12 @@ char_skills = {
 
   base = {
     name = "PLACEHOLDER",
-	rank = 0
     desc_short = "PLACEHOLDER",
     desc_long = "PLACEHOLDER",
-    stackable = true
+    expire_time = 0, -- skill effects don't expire
+    expire_announce = true, -- but should always announce when they disappear
+    priority = 3, -- and are never a high priority due to their permanence
+    stackable = false, -- and never stack
   },
 
   sk_awareness = {
@@ -52,12 +54,12 @@ char_skills = {
   sk_aerobic = {
     name = "sk_aerobic",
     desc_short = "Aerobic Fitness",
-    -- based off VIG and .5 TEN
+    -- based off SPD and .5 TEN
   },
   
   sk_anaerobic = {
     name = "sk_aerobic",
     desc_short = "Anaerobic Fitness",
-    -- based off SPD and .5 TEN
+    -- based off VIG and .5 TEN
   },
 }

@@ -19,12 +19,14 @@ Actor.groups = {}
 
 function Actor:Modifier(array,output)
   
-  if array[2] == "+"  or "-" or "+-" or "add" then
+  if array[2] == "+"  or "-" or "+-" or "addsub" then
     output = output + array[3]
     elseif array[2] == "*" or "mult" then
     output = output * array[3]
     elseif modifier[2] == "/" or "div" then
     output = output / array[3]
+  else
+    assert(nil,"Invalid modifier type")
   end
   
   return output
