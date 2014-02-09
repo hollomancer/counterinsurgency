@@ -48,18 +48,17 @@ char_skills = {
   sk_leadership = {
     name = "sk_leadership",
     desc_short = "Leadership",
-    -- based off 3 parts LIB, 1 part VIG/INT/TEN/ACU
   },
   
   sk_aerobic = {
     name = "sk_aerobic",
     desc_short = "Aerobic Fitness",
-    -- based off SPD and .5 TEN
+    --characters with high TEN are more likely to increase this stat
   },
   
   sk_anaerobic = {
     name = "sk_aerobic",
     desc_short = "Anaerobic Fitness",
-    -- based off VIG and .5 TEN
+    --characters with high VIG are more likely to increase this stat
   },
 }

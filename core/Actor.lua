@@ -93,6 +93,8 @@ function Actor:Rel(target)
     end
   end
   
+  -- generalize the following at some point
+  
   if table.hasval(target.groups,"ln") == true then
     self:CalcStat("rep_LN")
     reaction = reaction + self.stats.current_rep_LN
@@ -120,6 +122,10 @@ function CreateEffect(effect)
     require( "data/effects/char_backgrounds" )
     base_effect = char_backgrounds.base
     new_effect = char_backgrounds[effect]
+  elseif string.sub(effect,1,2) == "sk_" then
+    require( "data/effects/char_skills" )
+    base_effect = char_skills.base
+    new_effect = char_skills[effect]
   elseif effect ~= type("string") then
     assert(nil,"CreateEffect did not receive a string.")
   else
@@ -131,8 +137,6 @@ function CreateEffect(effect)
 
   return built_effect
 end
-
---the bottom two functions should sit on the top-level game file
 
 function AddGroupEffect(group,effect_string)
   for k,v in pairs(groups[group]) do
