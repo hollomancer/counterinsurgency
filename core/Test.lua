@@ -109,6 +109,7 @@ function Test.CharGenLN()
   
   for k,v in pairsByKeys(test_char2) do print (k,v) end
   test_char2:CalcVITALS()
+  test_char2:CalcStat("morale")
   test_char1:CalcReputation()
   print("--- Groups ---")
   for k,v in pairsByKeys(test_char2.groups) do print (v) end

@@ -156,9 +156,14 @@ function newChar(new_char,char_type)
   table.merge(personality,effects)
   
   -- add basic stats
+  
     --initialize relations
     stats["base_rep_LN"] = 0
     stats["base_rep_ISFK"] = 0
+    
+    --initialize morale
+    stats["base_morale"] = (math.random(30,70))
+          
   for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
   
   char.effects = effects

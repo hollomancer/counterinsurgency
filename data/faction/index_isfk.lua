@@ -4,23 +4,23 @@
 f_isfk_command = {
   name = "isfk_command",
   group = "isfk"
-  script = "data/faction/isfk_garrison"
+  script = "data/faction/isfk_garrison",
   region1 = {
     desc_short = "ISFK Command"
-  }
+  },
   region2 = {
     desc_short = "RHQ North"
-  }
+  },
   region3 = {
     desc_short = "RHQ South"
-  }
+  },
   region4 = {
     desc_short = "RHQ East"
-  }
+  },
   region5 = {
     desc_short = "RHQ West"
-  }
-  desc_long = "One of our two bosses. The ISFK has established a regional headquarters in every province. Regional headquarters ostensibly provide centralized leadership for the disparate nation-building and nation-unbuilding foreign forces in the area." --improve this
+  },
+  desc_long = "One of our two bosses. The ISFK has established a regional headquarters in every province. Regional headquarters maintain oversight of the disparate nation-building foreign forces and non-government organizations in the area.",
 }
 
 f_isfk_garrison = {
@@ -80,5 +80,5 @@ f_isfk_agency = {
   group = "isfk"
   script = "data/faction/isfk_agency"
   desc_short = "The Agency"
-  desc_long = "Well-funded, well-equipped government employees cruising around Khotiana in up-armored civilian vehicles, with unknown motivations, and top-cover from higher."
+  desc_long = "Well-funded, well-equipped government employees cruising around Khotaine in up-armored civilian vehicles, with unknown motivations, and top-cover from higher."
 }

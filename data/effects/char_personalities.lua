@@ -34,7 +34,7 @@ char_personalities = {
     TEN = {'actor','addsub',1},
     LIB = {'actor','addsub',1},
     reputation = {'actor','*',1.1},
-    morale_multiply = 0.25,
+    morale = {'actor','addsub',5},
     overwrites = {"p_humble"},
     relation = {
       p_humble = {'actor','addsub',-5},
@@ -97,6 +97,7 @@ char_personalities = {
     INT = {'actor','addsub',1},
     ACU = {'actor','addsub',1},
     reputation = {'actor','*',0.9},
+    morale = {'actor','addsub',-5},
     overwrites = {"p_bold"},
     relation = {
       p_bold = {'actor','addsub',-5},
@@ -110,6 +111,7 @@ char_personalities = {
     VIG = {'actor','addsub',1},
     LIB = {'actor','addsub',1},
     reputation = {'actor','*',1.1},
+    morale = {'actor','addsub',5},
     overwrites = {"p_cautious"},
     relation = {
       p_cautious = {'actor','addsub',-5},
@@ -123,6 +125,7 @@ char_personalities = {
     LIB = {'actor','addsub',1},
     TEN = {'actor','addsub',1},
     reputation = {'actor','*',1.1},
+    morale = {'actor','addsub',5},
     overwrites = {"p_pragmatic"},
     relation = {
       p_idealistic = {'actor','addsub',10},      
@@ -137,6 +140,7 @@ char_personalities = {
     LIB = {'actor','addsub',1},
     INT = {'actor','addsub',1},
     reputation = {'actor','*',0.9},
+    morale = {'actor','addsub',-5},
     overwrites = {"p_idealistic"},
     relation = {
       p_pragmatic = {'actor','addsub',10},      
@@ -153,6 +157,7 @@ char_personalities = {
     ACU = {'actor','addsub',-1},
     SPD = {'actor','addsub',-1},
     reputation = {'actor','*',0.9},
+    morale = {'actor','addsub',-5},
     overwrites = {"p_diligent"}
     -- Regular characters have a minor dislike of lazy characters, so I need a 'universal dislike' option.
   },
@@ -166,6 +171,7 @@ char_personalities = {
     ACU = {'actor','addsub',1},
     SPD = {'actor','addsub',1},
     reputation = {'actor','*',1.1},
+    morale = {'actor','addsub',5},
     overwrites = {"p_lazy"},
     relation = {
       p_diligent = {'actor','addsub',5},      
@@ -203,6 +209,7 @@ char_personalities = {
     VIG = {'actor','addsub',-1},
     TEN = {'actor','addsub',-1},
     LIB = {'actor','addsub',-1},
+    morale = {'actor','addsub',-5},
     overwrites = {"p_aggressive"}
   },
 
@@ -249,6 +256,7 @@ char_personalities = {
     desc_long = "A hard gainer.",
     VIG = {'actor','addsub',-2},
     TEN = {'actor','addsub',-1},
+    morale = {'actor','addsub',-5},
     overwrites = {"p_strong"}
   },
 
@@ -258,6 +266,7 @@ char_personalities = {
     desc_long = "PLACEHOLDER",
     TEN = {'actor','addsub',2},
     SPD = {'actor','addsub',1},
+    morale = {'actor','addsub',5},
     overwrites = {"p_outofshape"}
   },
 
@@ -267,6 +276,7 @@ char_personalities = {
     desc_long = "This person needs to hit the gym.",
     TEN = {'actor','addsub',-2},
     SPD = {'actor','addsub',-1},
+    morale = {'actor','addsub',-5},
     overwrites = {"p_athletic"}
   },
   
