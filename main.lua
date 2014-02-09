@@ -10,7 +10,7 @@ Game = State
 
 function love.update(dt)
   --Poll:Data()
-  --Game:update(dt)
+  Game:update(dt)
 
 end
 
