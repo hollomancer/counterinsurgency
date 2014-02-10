@@ -2,6 +2,7 @@ require( "core/Utils" )
 require( "core/Actor" )
 
 Char = Actor:clone()
+all_chars = {}
 
 function newChar(new_char,char_type)
   
@@ -170,6 +171,7 @@ function newChar(new_char,char_type)
   table.insert(char.groups,char_type)
   
   table.merge(char,new_char)
+  table.insert(all_chars,new_char) -- add this character to the list of all characters
   return new_char
 end
 

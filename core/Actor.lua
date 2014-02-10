@@ -122,12 +122,12 @@ function CreateEffect(effect)
     require( "data/effects/char_backgrounds" )
     base_effect = char_backgrounds.base
     new_effect = char_backgrounds[effect]
-  elseif string.sub(effect,1,2) == "sk_" then
+  elseif string.sub(effect,1,3) == "sk_" then
     require( "data/effects/char_skills" )
     base_effect = char_skills.base
     new_effect = char_skills[effect]
   elseif effect ~= type("string") then
-    assert(nil,"CreateEffect did not receive a string.")
+    assert(nil,"CreateEffect did not receive a string (received " .. effect .. ")")
   else
     assert(nil,"Effect not supported!")
   end
@@ -139,13 +139,25 @@ function CreateEffect(effect)
 end
 
 function AddGroupEffect(group,effect_string)
-  for k,v in pairs(groups[group]) do
-    k:AddEffect(effect_string)
+  for k,v in pairs(all_chars) do
+    for char,target in pairs(v) do
+      for blah, blah2 in pairs(v.groups) do
+        if blah2 == group then
+          v:AddEffect(effect_string)
+        end
+       end
+    end
   end
 end
 
 function RemoveGroupEffect(group,effect_string)
-  for k,v in pairs(groups[group]) do
-    k:RemoveEffect(effect_string)
+  for k,v in pairs(all_chars) do
+    for char,target in pairs(v) do
+      for blah, blah2 in pairs(v.groups) do
+        if blah2 == group then
+          v:RemoveEffect(effect_string)
+        end
+       end
+    end
   end
 end
