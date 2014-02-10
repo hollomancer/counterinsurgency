@@ -36,7 +36,7 @@ end
 function Actor:CalcStat(stat_string)
   local base = "base_" .. stat_string
   local current = self.stats[base]
-  local finished_stat = "current_" .. stat_string
+  local finished_stat = stat_string
   
   for k,v in pairs(self.effects) do
     if type(v) == "table" then
@@ -97,12 +97,12 @@ function Actor:Rel(target)
   
   if table.hasval(target.groups,"ln") == true then
     self:CalcStat("rep_LN")
-    reaction = reaction + self.stats.current_rep_LN
+    reaction = reaction + self.stats.rep_LN
     end
   
   if table.hasval(target.groups,"isfk") == true then
     self:CalcStat("rep_ISFK")
-    reaction = reaction + self.stats.current_rep_ISFK
+    reaction = reaction + self.stats.rep_ISFK
     end
   
   return reaction
