@@ -164,6 +164,18 @@ function newChar(new_char,char_type)
     
     --initialize morale
     stats["base_morale"] = (math.random(30,70))
+    
+    --initialize inventory
+    local inventory = {}
+    for i = 1,12 do
+      inventory[i] = {}
+    end
+    for k,v in pairs(inventory) do
+      for i = 1,2 do
+        inventory[k][i] = false
+      end
+    end
+    char.inventory = inventory
           
   for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
   
@@ -174,6 +186,7 @@ function newChar(new_char,char_type)
   table.insert(all_chars,new_char) -- add this character to the list of all characters
   return new_char
 end
+
 
 function Char:CalcVITALS()
   self:CalcStat("VIG")
