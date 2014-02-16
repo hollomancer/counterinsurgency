@@ -22,4 +22,22 @@ team_ethos = {
     -- Some of the best weapons for counterinsurgents do not shoot.
   },
 
+  team_ent_ethos = {
+    name = "team_ent_ethos"
+    desc_short = "Enterprise Ethos",
+    desc_long = "Your team is cunning, ambitious, and ready to make their mark.",
+    LIB = 1,
+    ACU = -1,
+    priority = 3,
+  },
+
+  team_aca_ethos = {
+    name = "team_aca_ethos"
+    desc_short = "Academic Ethos",
+    desc_long = "Your team is observant, restrained, and ready to learn about their environment.",
+    ACU = 1,
+    LIB = -1,
+    priority = 3,
+  },
+
 }
