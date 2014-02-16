@@ -3,6 +3,7 @@
 team_ethos = {
 
   team_war_ethos = {
+    name = "team_war_ethos"
     desc_short = "Warrior Ethos",
     desc_long = "Your team is aggressive, energetic, and ready to engage and destroy the enemy.",
     VIG = 1,
@@ -12,6 +13,7 @@ team_ethos = {
     },
 
   team_hum_ethos = {
+    name = "team_hum_ethos"
     desc_short = "Humanitarian Ethos",
     desc_long = "Your team is patient, contemplative, and ready to win hearts and minds.",
     INT = 1,
