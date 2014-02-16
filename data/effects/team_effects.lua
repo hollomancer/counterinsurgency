@@ -2,6 +2,16 @@
 
 team_ethos = {
 
+  base = {
+    name = "PLACEHOLDER",
+    desc_short = "PLACEHOLDER",
+    desc_long = "PLACEHOLDER",
+    expire_time = 0, -- ethos don't expire
+    expire_announce = true, -- but should always announce when they disappear
+    priority = 3, -- and are never a high priority due to their permanence
+    stackable = true, -- and always stack
+  },
+  
   team_war_ethos = {
     name = "team_war_ethos"
     desc_short = "Warrior Ethos",
