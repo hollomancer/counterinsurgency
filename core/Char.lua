@@ -2,10 +2,14 @@ require( "core/Utils" )
 require( "core/Actor" )
 
 Char = Actor:clone()
+require( "core/CharInventory" )
+
 all_chars = {}
 
-function newChar(new_char,char_type)
+function CreateChar(new_char,char_type)
   
+local function newChar(new_char,char_type)
+
   local new_char = Char:clone()
   local char = {groups={}}
   local effects = {}
@@ -165,7 +169,7 @@ function newChar(new_char,char_type)
     --initialize morale
     stats["base_morale"] = (math.random(30,70))
     
-    --initialize inventory
+    --[[initialize inventory
     local inventory = {}
     for i = 1,12 do
       inventory[i] = {}
@@ -175,7 +179,7 @@ function newChar(new_char,char_type)
         inventory[k][i] = false
       end
     end
-    char.inventory = inventory
+    char.inventory = inventory--]]
           
   for k,v in pairs(initVITALS(total_points,char)) do stats[k] = v end
   
@@ -187,7 +191,16 @@ function newChar(new_char,char_type)
   return new_char
 end
 
+  
+  local char = newChar(new_char,char_type)
+  
+  char:InitInventory()
 
+  return char
+
+end
+
+ 
 function Char:CalcVITALS()
   self:CalcStat("VIG")
   self:CalcStat("INT")

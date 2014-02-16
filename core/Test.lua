@@ -81,7 +81,7 @@ end
 
 function Test.CharGenISFK()
   print("### TEST: Generate ISFK Character ###")
-  test_char1 = newChar(test_char1,"isfk")
+  test_char1 = CreateChar(test_char1,"isfk")
   test_char1.name = "test_char1"
   test_char1.desc_short = "Test Character 1"
   test_char1.desc_long = "I am a test character 1."
@@ -102,7 +102,7 @@ end
 
 function Test.CharGenLN()
   print("### TEST: Generate LN Character ###")
-  test_char2 = newChar(test_char2,"ln")
+  test_char2 = CreateChar(test_char2,"ln")
   test_char2.name = "test_char2"
   test_char2.desc_short = "Test Character 2"
   test_char2.desc_long = "I am a test character 2."
