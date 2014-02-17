@@ -4,7 +4,7 @@
 f_isfk_command = {
   name = "isfk_command",
   group = "isfk"
-  script = "data/faction/isfk_garrison",
+  script = "data/faction/isfk_command",
   region1 = {
     desc_short = "ISFK Command"
   },
@@ -49,7 +49,21 @@ f_isfk_starborne = {
   name = "isfk_starborne"
   group = "isfk"
   script = "data/faction/isfk_starborne"
-  desc_short = "104th Starborne Infantry"
+  region1 = {
+    desc_short = "H/104th Starborne Infantry"
+  },
+  region2 = {
+    desc_short = "A/104th Starborne Infantry"
+  },
+  region3 = {
+    desc_short = "B/104th Starborne Infantry"
+  },
+  region4 = {
+    desc_short = "C/104th Starborne Infantry"
+  },
+  region5 = {
+    desc_short = "D/104th Starborne Infantry"
+  },
   desc_long = "The illustrious 104th SIR, also known as the 'Bold Rifles' regiment, has a long, noble lineage, having fought in nearly every major conflict for the last two hundred years. One of their companies is deployed in this province."
 }
 

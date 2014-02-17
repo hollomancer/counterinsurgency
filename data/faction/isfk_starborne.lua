@@ -8,3 +8,11 @@ Sledgehammer Company operates the QRF and base security for FOB Duffer. Their ti
 "Sledgehammer 1, SP time now, 2 vics, 8 pax, ETA X mins."
 
 "Sledgehammer 2 responding to follow-on mission, 2 vics, 8 pax, ETA X mins."
+
+Warhammer
+
+Foehammer
+
+Triphammer
+
+Jackhammer
