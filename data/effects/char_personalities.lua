@@ -5,9 +5,7 @@ char_personalities = {
 
   base = {
     name = "PLACEHOLDER",
-    desc_short = "PLACEHOLDER",
-    desc_long = "PLACEHOLDER",
-    expire_time = 0, -- personality traits don't expire`
+    expire_time = 0, -- personality traits don't expire
     expire_announce = true, -- but should always announce when they disappear
     priority = 3, -- and are never a high priority due to their permanence
     stackable = false, -- and never stack
