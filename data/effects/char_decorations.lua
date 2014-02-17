@@ -34,13 +34,6 @@ char_decorations = {
     INT = 1
   },
   
-  dec_i_combatletter = {
-    -- awarded after an action completes where you enter combat
-    name = "dec_i_combat",
-    desc_short = "Iron Combat Action Letter"
-    -- increases relation
-  },
-  
   dec_b_achievement = {
     name = "dec_b_achievement",
     desc_short = "Bronze Achievement Medal"
@@ -60,13 +53,6 @@ char_decorations = {
     morale = 1
     INT = 1
     ACU = 1
-  },
-  
-  dec_b_combatletter = {
-    -- awarded after an action completes where you enter combat
-    name = "dec_b_combatletter",
-    desc_short = "Bronze Combat Action Letter"
-    -- increases relation
   },
   
   dec_s_achievement = {
@@ -90,11 +76,37 @@ char_decorations = {
     ACU = 1
   },
   
-  dec_s_combatletter = {
+  
+  dec_combatletter = {
     -- awarded after an action completes where you enter combat
-    name = "dec_s_combatletter",
-    desc_short = "Silver Combat Action Letter"
+    name = "dec_combatletter",
+    desc_short = "Combat Action Letter"
+    TEN = 2
     -- increases relation
+  },
+  
+  dec_marksman = {
+    name = "dec_marksman"
+    desc_short = "Marksman Badge"
+    ACU = 2
+  },
+  
+  dec_starborne = {
+    name = "dec_starborne"
+    desc_shoty = "Starborne Badge"
+    SPD = 2
+  },
+  
+  dec_fighter = {
+    name = "dec_fighter"
+    desc_shoty = "Fighter Glyph"
+    VIG = 2
+  },
+  
+  dec_sword = {
+    name = "dec_sword"
+    desc_shoty = "Special Warfare Letter"
+    INT = 2
   },
   
 }
