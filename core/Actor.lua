@@ -57,18 +57,25 @@ end
 
 function Actor:AddEffect(effect_string)
   local effect = CreateEffect(effect_string)
-  self.effects[effect_string] = {} -- this will need to be changed when we start stacking effects
-  
-  --overwrite flag check
-  if effect.overwrites ~= nil then 
-    local overwrite_table = effect.overwrites
-    for k,v in pairs(overwrite_table) do
-      self.effects[v] = nil
+  if effect.stackable == false then
+    self.effects[effect_string] = {} -- this will need to be changed when we start stacking effects
+    
+    --overwrite flag check
+    if effect.overwrites ~= nil then 
+      local overwrite_table = effect.overwrites
+      for k,v in pairs(overwrite_table) do
+        self.effects[v] = nil
+      end
     end
+    
+    table.merge(effect,self.effects[effect_string])
+    self:CalcVITALS()
+  elseif effect.stackable == true then 
+    self.effects[effect_string] = {}
+    effect.stacks = 1
+    table.merge(effect,self.effects[effect_string])
+    self:CalcVITALS()
   end
-  
-  table.merge(effect,self.effects[effect_string])
-  self:CalcVITALS()
 end
 
 function Actor:RemoveEffect(effect_string)

@@ -115,7 +115,9 @@ function Test.CharGenLN()
   for k,v in pairsByKeys(test_char2.groups) do print (v) end
   print("--- Effects ---")
 --  test_char2:AddEffect("p_lazy")
-  AddGroupEffect("ln","sk_leadership")
+--  AddGroupEffect("ln","sk_leadership")
+  test_char2:AddEffect("sk_leadership")
+  test_char2:AddEffect("sk_leadership")
   for k,v in pairsByKeys(test_char2.effects) do print (k,v) end
   print("--- Stats ---")
   for k,v in pairsByKeys(test_char2.stats) do print (k,v) end
