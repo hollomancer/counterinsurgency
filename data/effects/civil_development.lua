@@ -7,6 +7,10 @@ civil_development_effects = {
     name = "PLACEHOLDER",
     desc_short = "PLACEHOLDER",
     desc_long = "PLACEHOLDER",
+    -- expire_time = 0,
+    expire_announce = true, -- but should always announce when they disappear
+    priority = 3, -- and are never a high priority due to their permanence
+    stackable = true, -- and always stack
   },
   
   cd_police_authority  = {
