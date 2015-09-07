@@ -2,7 +2,7 @@
 
 —General James Mattis, United States Marine Corps
 
-COUNTERINSURGENCY
+# COUNTERINSURGENCY
 
 You are a military team leader, with the mission to stabilize a small village in a war-torn country. You will lead your soldiers on civil-military operations; working to establish good relationships with the local populace, and to halt the threat of violence by insurgent forces in the area, through both combat and non-combat operations. This requires the player to understand the cultural and political conditions in this village, the personalities and skills of their own soldiers, and most importantly, the long-term repercussions of their actions.
 
