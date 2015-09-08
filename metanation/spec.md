@@ -11,7 +11,9 @@ METANATION GAME DIFFERENCES
 * Metanation games allow you to select your team from characters that you have already completed a game with. 
 
 METANATION EVENTS
+
 Depending on the month, a group of events will be unlocked based on the condition of the Metanation as a whole. 
 
 PRESTIGE
+
 Your selected unit gains Prestige for every Metanation game you complete victoriously. Prestige can be redeemed for ingame and non-ingame rewards.
