@@ -6,14 +6,13 @@ Access to the Metanation unlocks once you have completed one playthrough. This p
 
 METANATION GAME DIFFERENCES
 * Games taking place in the Metanation have a higher difficulty level, and will share the world condition from the previous player's playthrough. A player will never be assigned a game based off of one of their own previous playthroughs. 
-* Metanation games allow you to use your previous team, unlocking new content that can only be taken on by a  team with a high skill level.
+* Metanation games allow you to use your previous team, unlocking new content that can only be taken on by a team with a high skill level.
 * Metanation games give you Metanation events.
 * Metanation games allow you to select your team from characters that you have already completed a game with. 
+  * This will spawn Second-Tour events for individual soldiers.
 
 METANATION EVENTS
-
 Depending on the month, a group of events will be unlocked based on the condition of the Metanation as a whole. 
 
 PRESTIGE
-
-Your selected unit gains Prestige for every Metanation game you complete victoriously. Prestige can be redeemed for ingame and non-ingame rewards.
+Your selected unit gains Prestige for every Metanation game you complete victoriously. Prestige unlocks new content and furthers the plot of Metanation.
