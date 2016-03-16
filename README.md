@@ -11,3 +11,5 @@ You will learn about the soldiers whom you are responsible for; their personalit
 You will explore the society of the local village. Their values and culture are far different from your own, and what you see as reasonable, they may see as repulsive - and vice versa. At the same time, they are still men and women with families, desires, and needs. Those forces may lead them to embrace you, or to take up arms against you. How you react to this is up to you.
 
 From the day you are boots-on-ground, the decisions are yours to make, and you are responsible for what you do or fail to do. Will you devote your efforts to crushing the insurgency? Will you work to gain the respect and honor of the local nationals? Your decisions can win you praise and promotions from your higher command, scorn and derision from the locals, the loyalty and dedication of your soldiers, and everything in between.
+
+Decide what kind of leader you want to be.
