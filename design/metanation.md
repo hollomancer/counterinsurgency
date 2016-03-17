@@ -19,4 +19,27 @@ Depending on the month, a group of events will be unlocked based on the conditio
 
 PRESTIGE
 
-Your selected unit gains Prestige for every Metanation game you complete victoriously. Prestige unlocks new content and furthers the plot of Metanation. More complex, static Leave events will take place as well.
+Your selected unit gains Prestige for every Metanation game you complete victoriously. Prestige unlocks new content and furthers the plot of Metanation. More complex, static Leave events will take place as well
+
+DWELL TIME
+
+Dwell time comes into play when starting a new game off a previous game. Near the end of a deployment, some of your soldiers will come to you about leaving vs. staying.
+
+The following criteria will prevent a soldier from returning in a continuation game;
+
+* Soldier is too high ranked (cannot have three sergeants, for example; only two can return)
+* Soldier is counseled for exiting the service.
+* Soldier is critically wounded.
+* Soldier morale is below [threshold] at the close of the game.
+
+The following criteria will render a soldier available to rejoin you in a new game;
+
+* Soldier morale is above [threshold] at close of game.
+* Soldier is counseled for continuing in the service.
+
+Returning soldiers retain all of their statistics, giving you a powerful advantage in the next deployment. However, every time a soldier returns, their 'dwell time' modifier will increase.
+* The 'dwell time' modifier negatively affects critical attributes, making the soldier more likely to make a mistake.
+* The 'dwell time' modifier grows cumulatively for each subsequent game.
+
+In this manner, continuity is offered between games; but at a price.
+.
