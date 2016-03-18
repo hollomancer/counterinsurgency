@@ -1,6 +1,6 @@
 VITALS is our outwardly facing statistics system. Each character, in addition to their traits and skills, has VITALS statistics that act as checks for nearly everything you do.
 
-VIGOR. "Violence of action." Physical ability and energy.
+VIGOR. "Violence of action." Physical strength and health.
 - [LN] Gain 1 local influence per turn.
 
 INTELLECT. "Tactical patience." Sober, rational thinking.
@@ -9,7 +9,7 @@ INTELLECT. "Tactical patience." Sober, rational thinking.
 TENACITY. "No slack." Physical and mental toughness.
 - [LN] Gain 1 local influence per turn.
 
-ACUITY. "Stay alert. Stay alive." Situational awareness and the ability to perceive their surroundings. Core statistic for perception-based skills.
+ACUITY. "Stay alert. Stay alive." Situational awareness and perceptiveness.
 - [LN] Gain 1 local influence per turn.
 
 LIBERTY. "Eagles don't flock." Confidence and independence. Characters with high LIB take more initiative on their own. They have a higher chance of critically succeeding.
