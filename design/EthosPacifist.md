@@ -14,3 +14,6 @@ MECHANIC DESIGN
 STAT INCREASES
 
  - The VITALS of your team increase for every level of W-ETHOS (VIG+2,TEN+2)
+
+TECH DESIGN
+---
