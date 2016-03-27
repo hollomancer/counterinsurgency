@@ -4,6 +4,12 @@ Factions
 Narrative Design
 ---
 
+ENDS AND MEANS
+
+Factions have a very clear set of ends that do not change. Characters join factions with ends that they see as aligned to their interests. However, the characters within that faction may not agree on how to accomplish them.
+
+The methods, or 'means', that a faction uses are more or less likely to be executed based on the members of the faction, and the leader of the faction.
+
 Mechanic Design
 ---
 
