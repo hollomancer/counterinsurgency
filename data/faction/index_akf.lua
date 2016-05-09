@@ -1,5 +1,5 @@
---# index_akf.lua
---# Index of basic information for AKF factions.
+# index_akf.lua
+# Index of basic information for AKF factions.
 
 
 --[[FACTION (AKF): LIBERATION FRONT

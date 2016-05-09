@@ -1,5 +1,5 @@
---# isfk_starborne.lua
---# Script for the starborne company at FOB Duffer.
+# isfk_starborne.lua
+# Script for the starborne company at FOB Duffer.
 
 --[[notes...
 

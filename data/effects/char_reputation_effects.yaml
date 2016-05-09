@@ -1,0 +1,77 @@
+# char_reputation_effects.lua
+# Base data for all character reputation effects.
+
+base: &base
+  name: "PLACEHOLDER"
+  desc_short: "PLACEHOLDER",
+  desc_long: "PLACEHOLDER",
+  # expire_time: 0,
+  expire_announce: true, # but should always announce when they disappear
+  priority: 3, # and are never a high priority due to their permanence
+  stackable: true, # and always stack
+
+e_wealth:
+  <<: *base
+  name: "e_wealth"
+  desc_short: "Wealth"
+
+e_charismatic:
+  <<: *base
+  name: "e_charismatic"
+  desc_short: "Charismatic"
+
+e_vet:
+  <<: *base
+  name: "e_vet"
+  desc_short: "Veteran"
+
+e_hero:
+  <<: *base
+  name: "e_hero"
+  desc_short: "War Hero"
+
+e_legend:
+  <<: *base
+  name: "e_legend"
+  desc_short: "Legend"
+
+e_dynasticpower:
+  <<: *base
+  name: "e_dynasticpower"
+  desc_short: "Dynastic Power"
+
+e_effective:
+  <<: *base
+  name: "e_effective"
+  desc_short: "Effective"
+
+e_effective:
+  <<: *base
+  name: "e_ineffective"
+  desc_short: "Ineffective"
+
+e_bluefalcon:
+  <<: *base
+  name: "e_bluefalcon"
+  desc_short: "Blue Falcon"
+  desc_long: "Buddy is only half the word..."
+
+e_popular:
+  <<: *base
+  name: "e_popular"
+  desc_short: "Popular"
+
+e_wellliked:
+  <<: *base
+  name: "e_wellliked"
+  desc_short: "Well Liked"
+
+e_disliked:
+  <<: *base
+  name: "e_disliked"
+  desc_short: "Disliked"
+
+e_anathema:
+  <<: *base
+  name: "e_anathema"
+  desc_short: "Anathema"
