@@ -1,7 +1,7 @@
 ## char_personalities.lua
 ## Inherent personality traits for characters.
 
-base:
+base: &base
   name: "PLACEHOLDER"
   expire_time: 0, # personality traits don't expire
   expire_announce: true, # but should always announce when they disappear
@@ -9,6 +9,7 @@ base:
   stackable: false, # and never stack
 
 p_humble:
+  <<: *base
   name: "p_humble"
   desc_short: "Humble"
   desc_long: "A great man is always willing to be little."
@@ -22,6 +23,7 @@ p_humble:
     p_humble:'actor','addsub',5
 
 p_proud:
+  <<: *base
   name: "p_proud"
   desc_short: "Proud"
   desc_long: "Don't tell me what I can't do."
@@ -35,6 +37,7 @@ p_proud:
     p_humble:'actor','addsub',-5
 
 p_deceptive:
+  <<: *base
   name: "p_deceptive"
   desc_short: "Deceptive"
   desc_long: "PLACEHOLDER"
@@ -47,6 +50,7 @@ p_deceptive:
   # They tend to minorly dislike each other and minorly dislike their opposite, Honest characters.
 
 p_honest:
+  <<: *base
   name: "p_honest"
   desc_short: "Honest"
   desc_long: "PLACEHOLDER"
@@ -57,6 +61,7 @@ p_honest:
     p_honest:'actor','addsub',5
 
 p_progressive:
+  <<: *base
   name: "p_progressive"
   desc_short: "Progressive"
   desc_long: "You can never plan the future by the past."
@@ -67,6 +72,7 @@ p_progressive:
     p_conservative:'actor','addsub',-10
 
 p_conservative:
+  <<: *base
   name: "p_conservative"
   desc_short: "Conservative"
   desc_long: "It is not unusual to mistake change for progress."
@@ -77,6 +83,7 @@ p_conservative:
     p_conservative:'actor','addsub',10
 
 p_cautious:
+  <<: *base
   name: "p_cautious"
   desc_short: "Cautious"
   desc_long: "PLACEHOLDER"
@@ -89,6 +96,7 @@ p_cautious:
     p_bold:'actor','addsub',-5
 
 p_bold:
+  <<: *base
   name: "p_bold"
   desc_short: "Bold"
   desc_long: "Lay on, Macduff, and damned be him who first cries 'Hold! Enough!"
@@ -101,6 +109,7 @@ p_bold:
     p_cautious:'actor','addsub',-5
 
 p_idealistic:
+  <<: *base
   name: "p_idealistic"
   desc_short: "Idealistic"
   desc_long: "In attaining our ideals, our means should be as pure as the end."
@@ -114,6 +123,7 @@ p_idealistic:
     p_pragmatic:'actor','addsub',-5
 
 p_pragmatic:
+  <<: *base
   name: "p_pragmatic"
   desc_short: "Pragmatic"
   desc_long: "What matters is what works."
@@ -127,6 +137,7 @@ p_pragmatic:
     p_idealistic:'actor','addsub',-5
 
 p_lazy:
+  <<: *base
   name: "p_lazy"
   desc_short: "Lazy"
   desc_long: "PLACEHOLDER"
@@ -140,6 +151,7 @@ p_lazy:
   # Regular characters have a minor dislike of lazy characters, so I need a 'universal dislike' option.
 
 p_diligent:
+  <<: *base
   name: "p_diligent"
   desc_short: "Diligent"
   desc_long: "The reward of a work is to have produced it; the reward of effort is to have grown by it."
@@ -155,6 +167,7 @@ p_diligent:
     p_lazy:'actor','addsub',-10
 
 p_tolerant:
+  <<: *base
   name: "p_tolerant"
   desc_short: "Tolerant"
   desc_long: "PLACEHOLDER"
@@ -164,6 +177,7 @@ p_tolerant:
     p_militant:'actor','addsub',-5
 
 p_militant:
+  <<: *base
   name: "p_militant"
   desc_short: "Militant"
   desc_long: "PLACEHOLDER"
@@ -174,6 +188,7 @@ p_militant:
     p_tolerant:'actor','addsub',-5
 
 p_mildmannered:
+  <<: *base
   name: "p_mildmannered"
   desc_short: "Mild-mannered"
   desc_long: "PLACEHOLDER"
@@ -184,6 +199,7 @@ p_mildmannered:
   overwrites:"p_aggressive"
 
 p_aggressive:
+  <<: *base
   name: "p_aggressive"
   desc_short: "Aggressive"
   desc_long: "PLACEHOLDER"
@@ -193,6 +209,7 @@ p_aggressive:
   overwrites:"p_mildmannered"
 
 p_slowwitted:
+  <<: *base
   name: "p_slowwitted"
   desc_short: "Slow-witted"
   desc_long: "Not the sharpest knife in the drawer."
@@ -201,6 +218,7 @@ p_slowwitted:
   overwrites:"p_quickwitted"
 
 p_quickwitted:
+  <<: *base
   name: "p_quickwitted"
   desc_short: "Quick-witted"
   desc_long: "PLACEHOLDER"
@@ -209,6 +227,7 @@ p_quickwitted:
   overwrites:"p_slowwitted"
 
 p_strong:
+  <<: *base
   name: "p_strong"
   desc_short: "Strong"
   desc_long: "PLACEHOLDER"
@@ -217,6 +236,7 @@ p_strong:
   overwrites:"p_weak"
 
 p_weak:
+  <<: *base
   name: "p_weak"
   desc_short: "Weak"
   desc_long: "A hard gainer."
@@ -226,6 +246,7 @@ p_weak:
   overwrites:"p_strong"
 
 p_athletic:
+  <<: *base
   name: "p_athletic"
   desc_short: "Athletic"
   desc_long: "PLACEHOLDER"
@@ -235,6 +256,7 @@ p_athletic:
   overwrites:"p_outofshape"
 
 p_outofshape:
+  <<: *base
   name: "p_outofshape"
   desc_short: "Out of Shape"
   desc_long: "This person needs to hit the gym."
@@ -244,6 +266,7 @@ p_outofshape:
   overwrites:"p_athletic"
 
 p_slim:
+  <<: *base
   name: "p_slim"
   desc_short: "Slim"
   desc_long: "PLACEHOLDER"
@@ -252,6 +275,7 @@ p_slim:
   overwrites:"p_large"
 
 p_large:
+  <<: *base
   name: "p_large"
   desc_short: "Large"
   desc_long: "Large and in charge."
@@ -260,6 +284,7 @@ p_large:
   overwrites:"p_slim"
 
 p_pooreyesight:
+  <<: *base
   name: "p_pooreyesight"
   desc_short: "Poor Eyesight"
   desc_long: "PLACEHOLDER"
@@ -267,6 +292,7 @@ p_pooreyesight:
   overwrites:"p_eagleeyed"
 
 p_sharpeyed:
+  <<: *base
   name: "p_sharpeyed"
   desc_short: "Sharpeyed"
   desc_long: "PLACEHOLDER"
