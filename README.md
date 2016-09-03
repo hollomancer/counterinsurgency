@@ -4,9 +4,9 @@
 
 ## COUNTERINSURGENCY
 
-You are a military team leader, with the mission to stabilize a small village in a war-torn country. You will lead your soldiers on civil-military operations; working to establish good relationships with the local populace, and to halt the threat of violence by insurgent forces in the area, through both combat and non-combat operations. In order to accomplish this, you must understand the cultural and political conditions in this village, the personalities and skills of your soldiers, and most importantly, the long-term repercussions of your actions.
+You are a military team leader, with the mission to stabilize a small village in a war-torn country. You will lead your soldiers on civil-military operations; working to establish good relationships with the local populace, and to halt the threat of violence by insurgent forces in the area, through both combat and non-combat operations. To do this, you must understand the cultural and political conditions in this village, the personalities and skills of your soldiers, and most importantly, the long-term repercussions of your actions.
 
-You will learn about the soldiers whom you are responsible for; their personalities, their eccentricities, and their lives. Each is motivated differently, whether to get out there and fight the bad guys, to make life better for the locals, or just to get back in one piece.
+You will learn about the soldiers whom you are responsible for; their personalities, their eccentricities, and their lives. Each is motivated differently, whether to get out there and fight the bad guys, to make a positive difference in the village they ocupy, or just to get back home to their families in one piece.
 
 You will explore the society of the local village. Their values and culture are far different from your own, and what you see as reasonable, they may see as repulsive - and vice versa. At the same time, they are still men and women with families, desires, and needs. Those forces may lead them to embrace you, or to take up arms against you. How you react to this is up to you.
 
